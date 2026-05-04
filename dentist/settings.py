@@ -20,7 +20,7 @@ SECRET_KEY = '=c_^67@&4il)k1r!#7uwygqk@xbx14f2sz*z5=-mc@05nm6bwa'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["demyan1235t.pythonanywhere.com"]
+ALLOWED_HOSTS = ['dentist-production-0f00.up.railway.app', 'demyan1235t.pythonanywhere.com', '*']
 
 
 
