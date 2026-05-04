@@ -1,11 +1,9 @@
 from django.urls import path
 from . import views
 from .views import free_consultation
-from django.views.generic import TemplateView
 
 
 urlpatterns = [
-    path("sitemap.xml", TemplateView.as_view(template_name="sitemap.xml", content_type="application/xml")),
 	path('', views.home, name="home"),
 	path('contact/', views.contact, name="contact"),
 	path('about/', views.about, name="about"),

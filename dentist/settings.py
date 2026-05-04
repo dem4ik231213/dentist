@@ -3,7 +3,7 @@
 
 
 import os
-import django_heroku
+#import django_heroku
 import dj_database_url
 from decouple import config
 
@@ -20,7 +20,8 @@ SECRET_KEY = '=c_^67@&4il)k1r!#7uwygqk@xbx14f2sz*z5=-mc@05nm6bwa'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['fathomless-eyrie-02360.com' '*']
+ALLOWED_HOSTS = ["demyan1235t.pythonanywhere.com"]
+
 
 
 # Application definition
@@ -31,6 +32,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'django.contrib.sitemaps' ,
     'django.contrib.staticfiles',
     'website',
 ]
@@ -115,7 +117,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),    
+    os.path.join(BASE_DIR, 'static'),
 ]
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
@@ -129,8 +131,8 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 #EMAIL_HOST_USER = 'yourmail@gmail.com'
 #EMAIL_HOST_PASSWORD = ''
 #EMAIL_USE_TLS = True
-# EMAIL_USE_SSL = False 
+# EMAIL_USE_SSL = False
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-django_heroku.settings(locals())
+#django_heroku.settings(locals())

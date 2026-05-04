@@ -4,6 +4,8 @@ from django.shortcuts import render, redirect
 from .models import Appointment, ConsultationRequest
 from .models import ContactMessage
 from django.contrib import messages
+from django.http import HttpResponse
+from django.template.loader import render_to_string
 
 
 #from django.core.mail import send_mail
@@ -27,7 +29,7 @@ def free_consultation(request):
             message=message
         )
 
-        return redirect("home")   
+        return redirect("home")
 
     return redirect("home")
 
@@ -89,7 +91,7 @@ def appointment(request):
         your_schedule = request.POST['your-schedule']
         your_date = request.POST['your-date']
         your_message = request.POST['your-message']
-  
+
   #  ЗБЕРЕЖЕННЯ В БАЗУ ДАНИХ
         Appointment.objects.create(
             name=your_name,
@@ -101,7 +103,7 @@ def appointment(request):
             message=your_message
         )
 
-        
+
         # send an email
         #appointment = "Name: " + your_name + " Phone: " + your_phone + " Email: " + your_email + " Address: "\
         #	+ your_address + " Schedule: " + your_schedule + " Day: " + your_date + " Message: " + your_message
@@ -112,7 +114,7 @@ def appointment(request):
         #	your_email,
         #	['drHowardM@gmail.com'],
         #	)
-        
+
         return render(request, 'appointment.html', {
             'your_name': your_name,
             'your_phone': your_phone,
@@ -125,3 +127,11 @@ def appointment(request):
 
     else:
         return render(request, 'home.html', {})
+
+
+    from django.http import HttpResponse
+from django.template.loader import render_to_string
+
+def sitemap_xml(request):
+    xml = render_to_string("sitemap.xml")
+    return HttpResponse(xml, content_type="application/xml")
