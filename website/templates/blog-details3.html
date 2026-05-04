@@ -1,0 +1,131 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block structured_data %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+
+  "headline": "Why you should avoid sipping your drinks",
+
+  "description": "Constantly sipping sweet or acidic drinks can weaken your enamel and damage your teeth. Limiting them helps protect your smile.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Dento Dental Clinic",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://demyan1235.pythonanywhere.com/static/website/img/core-img/logo.png"
+    }
+  },
+
+  "datePublished": "2025-11-30",
+  "dateModified": "2025-11-30",
+
+  "url": "https://demyan1235.pythonanywhere.com/blog-details3/",
+
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://demyan1235.pythonanywhere.com/blog-details3/"
+  },
+
+  "image": "https://demyan1235.pythonanywhere.com/static/website/img/bg-img/6.jpg"
+}
+</script>
+{% endblock %}
+{% block title %} Why You Should Avoid Sipping Drinks | Dental Advice | Dento {% endblock %}
+{% block meta_description %}Frequent sipping of sugary or acidic drinks can damage tooth enamel. Learn simple dental tips to protect your teeth and keep your smile healthy. Read more!{% endblock %}
+
+{% block content %}
+
+<div class="breadcumb-area bg-img bg-gradient-overlay"
+     style="background-image: url({% static 'website/img/bg-img/20.jpg' %}); height: 250px;">
+    <div class="container h-100 d-flex justify-content-center align-items-center">
+        <h1 class="title text-white">Why You Should Avoid Sipping Drinks</h1>
+    </div>
+</div>
+
+<section class="blog-details-area section-padding-100">
+    <div class="container">
+        <div class="row justify-content-center align-items-start">
+
+            <!-- MAIN ARTICLE -->
+            <div class="col-lg-8 col-12">
+
+                <h2 class="mb-3 text-center">
+                    Drink Smart, Protect Your Teeth
+                </h2>
+
+                <p class="text-muted text-center mb-4">
+                    Published: 30 November 2025 • Author: Dr. Howard Miller
+                </p>
+
+                <div class="text-center">
+                    <img src="{% static 'website/img/bg-img/6.jpg' %}" alt="Avoid sipping drinks to protect teeth"
+                         style="max-width: 75%; border-radius: 10px;" class="mb-4">
+                </div>
+
+                <div class="article-text">
+
+                    <p>
+                        Constantly sipping sweet or acidic drinks may seem harmless, but it can seriously damage your
+                        teeth. Every time you take a sip, your teeth are exposed to sugars and acids that weaken enamel
+                        and increase the risk of cavities.
+                    </p>
+
+                    <p>
+                        When enamel becomes softer, teeth lose their natural protection. Over time this leads to
+                        sensitivity, pain and eventually tooth decay. Even “healthy” drinks like fruit juices or
+                        flavored water can be harmful if consumed frequently in small portions.
+                    </p>
+
+                    <blockquote style="font-size:18px; font-style:italic;
+                                    border-left:4px solid #00bcd4;
+                                    padding-left:15px; margin: 25px 0;">
+                        “It is not only what you drink — it is how you drink. Frequent sipping keeps teeth under constant acid attack.”
+                    </blockquote>
+
+                    <p>
+                        Dentists recommend drinking sweet or acidic beverages together with meals, not constantly
+                        throughout the day. Using a straw can also help reduce contact with teeth.
+                    </p>
+
+                    <p>
+                        Choosing water as your main drink is the best way to keep your enamel strong, your mouth fresh
+                        and your smile healthy.
+                    </p>
+
+                </div>
+
+                <a href="{% url 'home' %}" class="btn dento-btn mt-4">Back to Home</a>
+            </div>
+
+            <!-- SIDEBAR -->
+            <div class="col-lg-4 col-12 mt-5 mt-lg-0">
+
+                <div class="p-4 shadow rounded">
+                    <h3 class="mb-3">Healthy Drinking Tips</h3>
+
+                    <ul style="line-height: 1.9;">
+                        <li>Avoid sipping sugary drinks</li>
+                        <li>Prefer water during the day</li>
+                        <li>Use a straw if possible</li>
+                        <li>Drink sweets with meals</li>
+                        <li>Protect your enamel</li>
+                    </ul>
+                </div>
+
+                <div class="p-4 shadow rounded mt-4">
+                    <h4 class="mb-3">Why it matters?</h4>
+                    <p>
+                        Your drinking habits can either damage or protect your teeth. Small daily choices help maintain
+                        strong enamel and a confident smile.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /appointment/confirm/
+Allow: /
+
+Sitemap: https://demyan1235t.pythonanywhere.com/sitemap.xml

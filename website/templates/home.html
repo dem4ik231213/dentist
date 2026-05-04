@@ -17,7 +17,7 @@
             <div class="col-12">
               <!-- Welcome Text -->
               <div class="welcome-text text-center">
-                <h2 data-animation="fadeInUp" data-delay="100ms">My Name Is Igor K and I'm The Greatest Darn Dentist!!</h2>
+                <h1 data-animation="fadeInUp" data-delay="100ms">My Name Is Howard M and I'm The Professional Dentist!!</h1>
                 <p data-animation="fadeInUp" data-delay="300ms">As a leading industry innovator, Dento is opening up exciting new opportunities for dental professionals, investors, employees & suppliers. Contact us to find out what we have to
                   offer you.</p>
                 <div class="welcome-btn-group">
@@ -71,12 +71,21 @@
               <h2>About Us</h2>
               <div class="line"></div>
             </div>
-            <p>Vestibulum condimentum, risus sedones honcus rutrum, salah lacus mollis zurna, nec finibusmi velit advertisis. Proin vitae odin quis magna aliquet laciniae. Etiam auctor, nisi vel. Pellentesque ultrices nisl quam iaculis, nec pulvinar
-              augue.</p>
+            <p>
+Dento Dentistry is a modern family dental clinic that provides
+high-quality care for patients of all ages. Explore our
+<a href="{% url 'service' %}">professional dental services</a>,
+check transparent
+<a href="{% url 'pricing' %}">treatment pricing</a>,
+or learn more
+<a href="{% url 'about' %}">about our experienced team</a>.
+If you are ready to start treatment,
+<a href="{% url 'contact' %}">book an appointment</a> today.
+</p>
 
             <!-- Single Skills Area -->
             <div class="single-skills-area mt-30">
-              <h6>Experience Dentist</h6>
+              <h3>Experience Dentist</h3>
               <div id="bar1" class="barfiller">
                 <span class="tip"></span>
                 <span class="fill" data-percentage="80"></span>
@@ -85,7 +94,7 @@
 
             <!-- Single Skills Area -->
             <div class="single-skills-area mt-30">
-              <h6>Modern Equipment</h6>
+              <h3>Modern Equipment</h3>
               <div id="bar2" class="barfiller">
                 <span class="tip"></span>
                 <span class="fill" data-percentage="65"></span>
@@ -94,7 +103,7 @@
 
             <!-- Single Skills Area -->
             <div class="single-skills-area mt-30">
-              <h6>Friendly Staff</h6>
+              <h3>Friendly Staff</h3>
               <div id="bar3" class="barfiller">
                 <span class="tip"></span>
                 <span class="fill" data-percentage="85"></span>
@@ -223,7 +232,7 @@
         <!-- Video Area -->
         <div class="col-12 col-lg-6">
           <div class="dento-video-area mb-100">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/sZGlRmq7S_0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/qaBRlj-L3EE?si=35fRW_ZDyYYP4bgm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
           </div>
         </div>
@@ -314,7 +323,7 @@
 
         <div class="col-12">
           <div class="more-btn text-center mt-50">
-            <a href="#" class="btn dento-btn">Read More <i class="fa fa-angle-double-right"></i></a>
+            <a href="{% url 'pricing' %}" class="btn dento-btn">Read More <i class="fa fa-angle-double-right"></i></a>
           </div>
         </div>
       </div>
@@ -323,7 +332,7 @@
   <!-- Dento Pricing Table Area End -->
 
   <!-- Book An Oppointment Area Start -->
-  <section class="book-an-oppointment-area section-padding-100 bg-img bg-gradient-overlay jarallax clearfix" style="background-image: url('{% static 'website/img/bg-img/12.jpg' %}');">
+  <section id="appointment" class="book-an-oppointment-area section-padding-100 bg-img bg-gradient-overlay jarallax clearfix" style="background-image: url('{% static 'website/img/bg-img/12.jpg' %}');">
     <div class="container">
       <div class="row">
         <!-- Section Heading -->
@@ -419,7 +428,14 @@
         <!-- Single Dentist Area -->
         <div class="col-12 col-sm-6 col-md-4">
           <div class="single-dentist-area mb-100">
-            <img src="{% static 'website/img/bg-img/9.png' %}" alt="">
+            <picture>
+            <source srcset="{% static 'website/img/bg-img/9.webp' %}" type="image/webp">
+            <img src="{% static 'website/img/bg-img/9.png' %}"
+         alt="David Bennett implant expert dentist"
+         width="350"
+         height="350"
+         loading="lazy">
+         </picture>
             <!-- Dentist Content -->
             <div class="dentist-content">
               <!-- Social Info -->
@@ -430,7 +446,7 @@
               </div>
               <!-- Dentist Info -->
               <div class="dentist-info bg-gradient-overlay">
-                <h5>Michael Barley</h5>
+                <h5>David Bennett</h5>
                 <p>Implant Expert</p>
               </div>
             </div>
@@ -440,7 +456,14 @@
         <!-- Single Dentist Area -->
         <div class="col-12 col-sm-6 col-md-4">
           <div class="single-dentist-area mb-100">
-            <img src="{% static 'website/img/bg-img/10.png' %}" alt="">
+              <picture>
+              <source srcset="{% static 'website/img/bg-img/10.webp' %}" type="image/webp">
+              <img src="{% static 'website/img/bg-img/10.png' %}"
+               alt="Michael Sterling orthodontics specialist"
+         width="350"
+         height="350"
+         loading="lazy">
+         </picture>
             <!-- Dentist Content -->
             <div class="dentist-content">
               <!-- Social Info -->
@@ -451,8 +474,8 @@
               </div>
               <!-- Dentist Info -->
               <div class="dentist-info bg-gradient-overlay">
-                <h5>Michael Barley</h5>
-                <p>Implant Expert</p>
+                <h5>Michael Sterling</h5>
+                <p>Orthodontics & Braces Expert</p>
               </div>
             </div>
           </div>
@@ -461,7 +484,14 @@
         <!-- Single Dentist Area -->
         <div class="col-12 col-sm-6 col-md-4">
           <div class="single-dentist-area mb-100">
-            <img src="{% static 'website/img/bg-img/11.png' %}" alt="">
+            <picture>
+            <source srcset="{% static 'website/img/bg-img/11.webp' %}" type="image/webp">
+            <img src="{% static 'website/img/bg-img/11.png' %}"
+         alt="Emily Parker pediatric dentist"
+         width="350"
+         height="350"
+         loading="lazy">
+         </picture>
             <!-- Dentist Content -->
             <div class="dentist-content">
               <!-- Social Info -->
@@ -472,8 +502,8 @@
               </div>
               <!-- Dentist Info -->
               <div class="dentist-info bg-gradient-overlay">
-                <h5>Michael Barley</h5>
-                <p>Implant Expert</p>
+                <h5>Emily Parker</h5>
+                <p>Pediatric & Family Dentistry</p>
               </div>
             </div>
           </div>
@@ -494,7 +524,14 @@
             <div class="single-testimonial-slide d-flex align-items-center">
               <!-- Thumbnail -->
               <div class="testimonial-thumb">
-                <img src="{% static 'website/img/bg-img/8.jpg' %}" alt="">
+                <picture>
+                <source srcset="{% static 'website/img/bg-img/8.webp' %}" type="image/webp">
+                <img src="{% static 'website/img/bg-img/8.jpg' %}"
+         alt="Arron Ramsey dental patient testimonial"
+         width="180"
+         height="180"
+         loading="lazy">
+         </picture>
               </div>
               <!-- Content -->
               <div class="testimonial-content">
@@ -509,7 +546,14 @@
             <div class="single-testimonial-slide d-flex align-items-center">
               <!-- Thumbnail -->
               <div class="testimonial-thumb">
-                <img src="{% static 'website/img/bg-img/8.jpg' %}" alt="">
+                <picture>
+                <source srcset="{% static 'website/img/bg-img/8.webp' %}" type="image/webp">
+                <img src="{% static 'website/img/bg-img/8.jpg' %}"
+         alt="Arron Ramsey dental patient testimonial"
+         width="180"
+         height="180"
+         loading="lazy">
+         </picture>
               </div>
               <!-- Content -->
               <div class="testimonial-content">
@@ -524,7 +568,14 @@
             <div class="single-testimonial-slide d-flex align-items-center">
               <!-- Thumbnail -->
               <div class="testimonial-thumb">
-                <img src="{% static 'website/img/bg-img/8.jpg' %}" alt="">
+                <picture>
+                <source srcset="{% static 'website/img/bg-img/8.webp' %}" type="image/webp">
+                <img src="{% static 'website/img/bg-img/8.jpg' %}"
+         alt="Arron Ramsey dental patient testimonial"
+         width="180"
+         height="180"
+         loading="lazy">
+         </picture>
               </div>
               <!-- Content -->
               <div class="testimonial-content">
@@ -558,15 +609,22 @@
         <!-- Single Blog Item -->
         <div class="col-12 col-md-6 col-lg-4">
           <div class="single-blog-item mb-100">
-            <a href="./blog-details.html">
-              <img src="{% static 'website/img/bg-img/4.jpg' %}" alt="">
+            <a href="{% url 'blog1' %}">
+             <picture>
+             <source srcset="{% static 'website/img/bg-img/4.webp' %}" type="image/webp">
+             <img src="{% static 'website/img/bg-img/4.jpg' %}"
+         alt="How oral bacteria can harm your lungs"
+         width="350"
+         height="236"
+         loading="lazy">
+         </picture>
             </a>
             <!-- Blog Content -->
             <div class="blog-content">
-              <a href="./blog-details.html" class="post-title">How your mouth bacteria can harm your lungs</a>
-              <p>Donec tempor, lorem et euismod eleifend, est lectus laoreet ante, sed accusan justo diam ...</p>
+              <a href="{% url 'blog1' %}" class="post-title">How your mouth bacteria can harm your lungs</>
+              <p>Even small dental problems can affect your whole body. Regular hygiene and timely visits help keep you healthy and reduce serious health risks.</p>
               <div class="post-meta">
-                <a href="#"><i class="icon_clock_alt"></i> 28 Sep 2018</a>
+                <a href="#"><i class="icon_clock_alt"></i> 20 Sep 2025</a>
                 <a href="#"><i class="icon_chat_alt"></i> 3 Comments</a>
               </div>
             </div>
@@ -576,15 +634,22 @@
         <!-- Single Blog Item -->
         <div class="col-12 col-md-6 col-lg-4">
           <div class="single-blog-item mb-100">
-            <a href="./blog-details.html">
-              <img src="{% static 'website/img/bg-img/5.jpg' %}" alt="">
+            <a href="{% url 'blog2' %}">
+              <picture>
+              <source srcset="{% static 'website/img/bg-img/5.webp' %}" type="image/webp">
+              <img src="{% static 'website/img/bg-img/5.jpg' %}"
+         alt="Choosing the best toothpaste for healthy teeth"
+         width="350"
+         height="236"
+         loading="lazy">
+         </picture>
             </a>
             <!-- Blog Content -->
             <div class="blog-content">
-              <a href="./blog-details.html" class="post-title">What is the best kind of toothpaste to use?</a>
-              <p>Donec tempor, lorem et euismod eleifend, est lectus laoreet ante, sed accusan justo diam ...</p>
+              <a href="{% url 'blog2' %}" class="post-title">What is the best kind of toothpaste to use?</a>
+              <p>Choosing the right toothpaste helps protect your teeth, prevent decay, and keep your smile healthy. It makes daily care more effective.</p>
               <div class="post-meta">
-                <a href="#"><i class="icon_clock_alt"></i> 28 Sep 2018</a>
+                <a href="#"><i class="icon_clock_alt"></i> 3 June 2025</a>
                 <a href="#"><i class="icon_chat_alt"></i> 3 Comments</a>
               </div>
             </div>
@@ -594,15 +659,22 @@
         <!-- Single Blog Item -->
         <div class="col-12 col-md-6 col-lg-4">
           <div class="single-blog-item mb-100">
-            <a href="./blog-details.html">
-              <img src="{% static 'website/img/bg-img/6.jpg' %}" alt="">
+            <a href="{% url 'blog3' %}">
+              <picture>
+              <source srcset="{% static 'website/img/bg-img/6.webp' %}" type="image/webp">
+              <img src="{% static 'website/img/bg-img/6.jpg' %}"
+         alt="Why sugary drinks can damage your teeth"
+         width="350"
+         height="236"
+         loading="lazy">
+         </picture>
             </a>
             <!-- Blog Content -->
             <div class="blog-content">
-              <a href="./blog-details.html" class="post-title">Why you should avoid sipping your drinks</a>
-              <p>Donec tempor, lorem et euismod eleifend, est lectus laoreet ante, sed accusan justo diam ...</p>
+              <a href="{% url 'blog3' %}" class="post-title">Why you should avoid sipping your drinks</a>
+              <p>Constantly sipping sweet or acidic drinks can weaken your enamel and damage your teeth. Limiting them helps protect your smile.</p>
               <div class="post-meta">
-                <a href="#"><i class="icon_clock_alt"></i> 28 Sep 2018</a>
+                <a href="#"><i class="icon_clock_alt"></i> 30 Nov 2025</a>
                 <a href="#"><i class="icon_chat_alt"></i> 3 Comments</a>
               </div>
             </div>
@@ -613,5 +685,5 @@
   </section>
   <!-- ***** Blog Area End ***** -->
 
- 
+
  {% endblock %}

@@ -1,3 +1,7 @@
+
+
+
+
 import os
 import django_heroku
 import dj_database_url
@@ -64,14 +68,14 @@ WSGI_APPLICATION = 'dentist.wsgi.application'
 
 
 # Database
-# https://docs.djangoproject.com/en/3.0/ref/settings/#databases
-
+# https://docs.djangoproject.com/en/3.0/ref/settings/#databases}
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
 
 
 # Password validation
@@ -120,12 +124,13 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # accounts.google.com/DisplayUnlockCaptcha
 # myaccount.google.com/apppasswords
 # Email Settings
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_HOST_USER = 'yourmail@gmail.com'
-EMAIL_HOST_PASSWORD = ''
-EMAIL_USE_TLS = True
+#EMAIL_HOST = 'smtp.gmail.com'
+#EMAIL_PORT = 587
+#EMAIL_HOST_USER = 'yourmail@gmail.com'
+#EMAIL_HOST_PASSWORD = ''
+#EMAIL_USE_TLS = True
 # EMAIL_USE_SSL = False 
 
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 django_heroku.settings(locals())

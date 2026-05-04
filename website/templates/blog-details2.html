@@ -1,0 +1,124 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block structured_data %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "What is the best kind of toothpaste to use?",
+  "description":"Choosing the right toothpaste helps protect your teeth, prevent decay, and keep your smile healthy.",
+  "author": {
+    "@type": "Organization",
+    "name": "Dento Dental Clinic",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://demyan1235.pythonanywhere.com/static/website/img/core-img/logo.png"
+    }
+  },
+  "datePublished": "2025-06-03",
+  "dateModified": "2025-06-03",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://demyan1235.pythonanywhere.com/blog-details2/"
+  },
+  "image": "https://demyan1235.pythonanywhere.com/static/website/img/bg-img/5.jpg"
+}
+</script>
+{% endblock %}
+{% block title %} Best Toothpaste for Healthy Teeth | Expert Tips | Dento {% endblock %}
+{% block meta_description %}Not sure which toothpaste to choose? Discover expert tips for selecting the best toothpaste to protect enamel and keep your teeth healthy. Read more!{% endblock %}
+
+{% block content %}
+
+<div class="breadcumb-area bg-img bg-gradient-overlay"
+     style="background-image: url({% static 'website/img/bg-img/12.jpg' %}); height: 250px;">
+    <div class="container h-100 d-flex justify-content-center align-items-center">
+        <h1 class="title text-white">Best Toothpaste Tips</h1>
+    </div>
+</div>
+
+<section class="blog-details-area section-padding-100">
+    <div class="container">
+        <div class="row justify-content-center align-items-start">
+
+            <!-- MAIN ARTICLE -->
+            <div class="col-lg-8 col-12">
+
+                <h2 class="mb-3 text-center">
+                    Choosing the Right Toothpaste
+                </h2>
+
+                <p class="text-muted text-center mb-4">
+                    Published: 3 June 2025 • Author: Dr. Howard Miller
+                </p>
+
+                <div class="text-center">
+                    <img src="{% static 'website/img/bg-img/5.jpg' %}" alt="Choosing the best toothpaste"
+                         style="max-width: 75%; border-radius: 10px;" class="mb-4">
+                </div>
+
+                <div class="article-text">
+
+                    <p>
+                        Toothpaste plays a key role in everyday dental hygiene. Different toothpaste types are designed
+                        for different needs such as enamel protection, whitening, sensitivity relief and gum care.
+                        Choosing the right toothpaste helps keep your teeth healthy and your smile bright.
+                    </p>
+
+                    <p>
+                        Many dentists recommend toothpaste that contains fluoride, as it strengthens tooth enamel and
+                        helps prevent cavities. If you suffer from tooth sensitivity, select toothpaste specially
+                        designed to reduce discomfort and protect exposed dentin.
+                    </p>
+
+                    <blockquote style="font-size:18px; font-style:italic;
+                                    border-left:4px solid #00bcd4;
+                                    padding-left:15px; margin: 25px 0;">
+                        “The best toothpaste is the one that matches your personal dental needs and is used regularly.”
+                    </blockquote>
+
+                    <p>
+                        Whitening toothpaste can be helpful but should be used carefully to avoid enamel damage.
+                        If you are unsure what toothpaste is right for you, consult your dentist who can recommend
+                        an individual solution based on your oral health.
+                    </p>
+
+                    <p>
+                        Remember, toothpaste alone is not enough. Regular brushing, flossing and professional dental
+                        check-ups together form strong protection for your teeth and gums.
+                    </p>
+
+                </div>
+
+                <a href="{% url 'home' %}" class="btn dento-btn mt-4">Back to Home</a>
+            </div>
+
+            <!-- SIDEBAR -->
+            <div class="col-lg-4 col-12 mt-5 mt-lg-0">
+
+                <div class="p-4 shadow rounded mt-4">
+
+                    <h3 class="mb-3">Toothpaste Guide</h3>
+                    <ul>
+                        <li>Use fluoride toothpaste</li>
+                        <li>Choose according to your needs</li>
+                        <li>Be careful with whitening products</li>
+                        <li>Consult your dentist if unsure</li>
+                    </ul>
+                </div>
+
+                <div class="p-4 shadow rounded mt-4">
+
+                    <h4 class="mb-3">Healthy Smile = Healthy Life</h4>
+                    <p>
+                        Right toothpaste supports healthy teeth, fresh breath, confidence and long-term oral health.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+{% endblock %}

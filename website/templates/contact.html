@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block title %}About Dr. Igor K {%endblock %}
-{% block meta_description %}This is the website of Dr. Igor K DMD the greatest dentist who ever dentisted!{% endblock %}
+{% block title %}Contact Dental Clinic | Easy Appointment Booking | Dento {%endblock %}
+{% block meta_description %}Need a dental appointment? Contact our clinic for quick booking and professional support. Call or book online today!{% endblock %}
 {% block content %}
 
   <!-- ***** Breadcrumb Area Start ***** -->
@@ -9,7 +9,7 @@
     <div class="container h-100">
       <div class="row h-100 align-items-center">
         <div class="col-12">
-          <h2 class="title">Contact</h2>
+         <h1 class="title">Contact Dento Dental Clinic</h1>
         </div>
       </div>
     </div>
@@ -29,7 +29,7 @@
     </div>
   </div>
   <!-- ***** Breadcrumb Area End ***** -->
-  
+
   <!-- ***** Contact Area Start ***** -->
   {% if message_name %}
     <center>
@@ -43,9 +43,18 @@
     <div class="container">
       <div class="row">
         <div class="col-12">
+            <p>
+      If you are looking for professional dental care, explore our
+      <a href="{% url 'service' %}">dental services</a>,
+      check transparent
+      <a href="{% url 'pricing' %}">treatment pricing</a>,
+      or learn more
+      <a href="{% url 'about' %}">about our dental team</a>
+      before booking your appointment.
+    </p>
           <div class="google-maps mb-100">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2914.4921866884347!2d131.8408852150598!3d43.07314677914539!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5fb39207f7250725%3A0xffe3bcbfcf7d40a9!2z0JzQsNGP0Log0KLQvtC60LDRgNC10LLRgdC60LDRjyDQutC-0YjQutCw!5e0!3m2!1sru!2sru!4v1585055624230!5m2!1sru!2sru"
-              allowfullscreen></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3214.391350477202!2d-86.59055862532811!3d36.32706399422933!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88644718c55621e7%3A0x3b0d6b7e956c1c65!2sHoward%20Dentistry%20-%20Hendersonville%20Family%20Dentist!5e0!3m2!1suk!2sua!4v1766834564751!5m2!1suk!2sua" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
 
           </div>
         </div>
@@ -55,16 +64,16 @@
         <!-- Contact Information -->
         <div class="col-12 col-md-4">
           <div class="contact-information">
-            <h5>Address</h5>
-            <p>10 West Elm, Chicago, 60610 Russia</p>
+            <h2>Address</h2>
+            <p>125 Saundersville Rd Ste 112, Hendersonville, TN 37075, Сполучені Штати</p>
 
-            <h5>Phone</h5>
-            <p>111 222.3333</p>
+            <h2>Phone</h2>
+            <p>+1 615-828-5833</p>
 
-            
 
-            <h5>Email</h5>
-            <p class="mb-0">drIgorK@gmail.com</p>
+
+            <h2>Email</h2>
+            <p class="mb-0">drHovardM@gmail.com</p>
           </div>
         </div>
 

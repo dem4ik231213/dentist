@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block title %}Pricing For Dr. Igor K{%endblock %}
-{% block meta_description %}Find our current prices for all major Dental Procedures.{% endblock %}
+{% block title %}Dental Pricing & Plans | Affordable Dental Care | Dento {%endblock %}
+{% block meta_description %}Check our transparent dental pricing and treatment plans. Quality care at fair prices with flexible options. Schedule your consultation today!{% endblock %}
 
 {% block content %}
 
@@ -12,7 +12,7 @@
     <div class="container h-100">
       <div class="row h-100 align-items-center">
         <div class="col-12">
-          <h2 class="title">Our Pricing</h2>
+          <h1 class="title">Dental Pricing & Treatment Plans</h1>
         </div>
       </div>
     </div>
@@ -38,6 +38,15 @@
     <div class="container">
       <div class="row">
         <div class="col-12">
+            <p>
+      Our dental pricing is transparent and designed to fit different needs.
+      Learn more about our
+      <a href="{% url 'service' %}">dental services</a>,
+      meet our
+      <a href="{% url 'about' %}">experienced dental team</a>,
+      or <a href="{% url 'contact' %}">book a consultation</a>
+      to receive a personalized treatment plan.
+    </p>
           <div class="dento-price-table table-responsive">
             <table class="table table-borderless mb-0">
               <thead>
@@ -173,7 +182,7 @@
   </section>
   <!-- ***** Dento Pricing Table Area End ***** -->
 
-  
+
 
 
 {% endblock %}

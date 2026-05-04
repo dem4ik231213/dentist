@@ -1,0 +1,123 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block structured_data %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How your mouth bacteria can harm your lungs",
+  "description": "Learn how oral bacteria can affect overall health and why regular dental care is important.",
+  "author": {
+    "@type": "Person",
+    "name": "Dr. Howard Miller"
+  },
+
+  "datePublished": "2025-09-20",
+  "dateModified": "2025-09-20",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://demyan1235.pythonanywhere.com/blog-details1/"
+  },
+  "image": "https://demyan1235.pythonanywhere.com/static/website/img/bg-img/4.jpg"
+}
+</script>
+{% endblock %}
+{% block title %} Oral Bacteria and Lung Health | Dental Blog | Dento {% endblock %}
+{% block meta_description %}
+Learn how oral bacteria can affect lung health and overall wellbeing. Discover expert dental tips to protect your smile and improve oral hygiene. Read more!
+{% endblock %}
+
+{% block content %}
+
+<div class="breadcumb-area bg-img bg-gradient-overlay"
+     style="background-image: url({% static 'website/img/bg-img/13.jpg' %}); height: 250px;">
+    <div class="container h-100 d-flex justify-content-center align-items-center">
+        <h1 class="title text-white">Mouth Bacteria & Health</h1>
+    </div>
+</div>
+
+<section class="blog-details-area section-padding-100">
+    <div class="container">
+
+        <div class="row justify-content-center">
+
+            <!-- MAIN ARTICLE -->
+            <div class="col-lg-8 col-12">
+
+                <h2 class="mb-3 text-center">
+                    Mouth Bacteria And Lung Health
+                </h2>
+
+                <p class="text-muted text-center mb-4">
+                    Published: 20 September 2025 • Author: Dr. Howard Miller
+                </p>
+
+                <div class="text-center">
+                    <img src="{% static 'website/img/bg-img/4.jpg' %}" alt="Dental oral bacteria illustration"
+                         style="max-width: 75%; border-radius: 10px;" class="mb-4">
+                </div>
+
+                <p>
+                    Many people think oral hygiene only affects teeth and gums, but in reality oral bacteria can
+                    influence the entire body. Poor oral care increases the number of harmful bacteria that can travel
+                    from your mouth into your lungs, causing inflammation and respiratory problems.
+                </p>
+
+                <p>
+                    When harmful mouth bacteria enter the respiratory system, they may increase the risk of infections
+                    such as pneumonia, bronchitis and breathing difficulties. This is especially dangerous for elderly
+                    people, smokers and individuals with weakened immunity.
+                </p>
+
+                <blockquote style="font-size:18px; font-style:italic;
+                                    border-left:4px solid #00bcd4;
+                                    padding-left:15px; margin: 25px 0;">
+                    “Healthy mouth — healthy body. Oral hygiene is not only about a beautiful smile,
+                    it is about protecting your whole health.”
+                </blockquote>
+
+                <p>
+                    Regular brushing, flossing and professional dental cleanings significantly reduce dangerous
+                    bacteria. Visiting the dentist every six months helps detect problems early and prevents serious
+                    complications not only in the mouth, but also in the lungs.
+                </p>
+
+                <p>
+                    A few minutes of daily care can save you from serious medical problems in the future.
+                    Your smile is the first step to your health.
+                </p>
+
+                <a href="{% url 'home' %}" class="btn dento-btn mt-4">Back to Home</a>
+            </div>
+
+            <!-- SIDE INFO PANEL -->
+            <div class="col-lg-4 col-12 mt-5 mt-lg-0">
+
+                <div class="p-4 shadow rounded">
+                    <h2 class="mb-3">Quick Health Tips</h2>
+
+                    <ul style="line-height: 1.9;">
+                        <li>Brush teeth twice a day</li>
+                        <li>Use fluoride toothpaste</li>
+                        <li>Do not forget flossing</li>
+                        <li>Visit dentist every 6 months</li>
+                        <li>Avoid constant sugary drinks</li>
+                    </ul>
+                </div>
+
+                <div class="p-4 shadow rounded mt-4">
+                    <h3 class="mb-3">Why it matters?</h3>
+                    <p>
+                        Oral health affects your whole body. Taking care of your smile helps prevent infections,
+                        improves breathing, confidence and overall health.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}
