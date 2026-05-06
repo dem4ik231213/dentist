@@ -1,122 +1,553 @@
 {% extends 'base.html' %}
 {% load static %}
+
 {% block structured_data %}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "How your mouth bacteria can harm your lungs",
-  "description": "Learn how oral bacteria can affect overall health and why regular dental care is important.",
+  "headline": "Лікування карієсу: сучасні методи, симптоми та профілактика",
+  "description": "Дізнайтесь про сучасні методи лікування карієсу, основні симптоми та ефективні способи профілактики.",
   "author": {
     "@type": "Person",
     "name": "Dr. Howard Miller"
   },
-
-  "datePublished": "2025-09-20",
-  "dateModified": "2025-09-20",
+  "datePublished": "2026-05-06",
+  "dateModified": "2026-05-06",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://demyan1235.pythonanywhere.com/blog-details1/"
+    "@id": "https://demyan1235.pythonanywhere.com/blog-details/1/"
   },
   "image": "https://demyan1235.pythonanywhere.com/static/website/img/bg-img/4.jpg"
 }
 </script>
 {% endblock %}
-{% block title %} Oral Bacteria and Lung Health | Dental Blog | Dento {% endblock %}
+
+{% block title %}
+Лікування карієсу:現代ні методи та профілактика | Dento
+{% endblock %}
+
 {% block meta_description %}
-Learn how oral bacteria can affect lung health and overall wellbeing. Discover expert dental tips to protect your smile and improve oral hygiene. Read more!
+Лікування карієсу на ранніх стадіях допомагає уникнути болю та ускладнень. Дізнайтесь про сучасні методи лікування та профілактику.
 {% endblock %}
 
 {% block content %}
 
+<style>
+/* Загальний контейнер статті */
+.article-content {
+    max-width: 850px;
+    margin: 0 auto;
+    line-height: 1.9;
+    font-size: 18px;
+    color: #4A5568;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Заголовки */
+.article-content h2 {
+    font-size: 32px;
+    margin-top: 50px;
+    margin-bottom: 24px;
+    color: #0d3859; /* Глибокий синій колір бренду */
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.article-content h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 60px;
+    height: 4px;
+    background-color: #00bcd4; /* Яскравий бірюзовий акцент */
+    border-radius: 2px;
+}
+
+.article-content h2.text-center::after {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.article-content h3 {
+    font-size: 24px;
+    margin-top: 35px;
+    margin-bottom: 15px;
+    color: #1a5276;
+    font-weight: 600;
+}
+
+.article-content p {
+    margin-bottom: 22px;
+    text-align: justify;
+}
+
+/* Зображення */
+.article-content img {
+    width: 100%;
+    border-radius: 16px;
+    margin: 35px 0;
+    box-shadow: 0 10px 25px rgba(0, 188, 212, 0.15);
+}
+
+/* Стильна цитата (Блокквот) */
+.article-content blockquote {
+    background: linear-gradient(90deg, #edfaff 0%, #f4f6f9 100%);
+    border-left: 5px solid #00bcd4;
+    padding: 25px 30px;
+    border-radius: 0 16px 16px 0;
+    font-style: italic;
+    font-size: 20px;
+    color: #0d3859;
+    margin: 40px 0;
+    font-weight: 500;
+    box-shadow: 3px 3px 12px rgba(0,0,0,0.02);
+}
+
+/* Марковані списки */
+.article-content ul.custom-list {
+    list-style: none;
+    padding-left: 5px;
+    margin-bottom: 25px;
+}
+
+.article-content ul.custom-list li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 12px;
+}
+
+.article-content ul.custom-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 2px;
+    color: #00bcd4;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* Секція FAQ (Запитання-відповіді) */
+.faq-item {
+    background: #fdfdfd;
+    border: 1px solid #eef2f5;
+    border-left: 4px solid #1a5276;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.01);
+}
+
+.faq-item h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: #0d3859;
+}
+
+.faq-item p {
+    margin-bottom: 0;
+}
+
+/* Гарна таблиця порівняння методів */
+.dental-table-responsive {
+    overflow-x: auto;
+    margin: 35px 0;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.dental-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+    background-color: white;
+}
+
+.dental-table th {
+    background-color: #0d3859;
+    color: white;
+    text-align: left;
+    padding: 16px;
+    font-weight: 600;
+}
+
+.dental-table td {
+    padding: 16px;
+    border-bottom: 1px solid #eef2f5;
+    font-size: 16px;
+}
+
+.dental-table tr:last-child td {
+    border-bottom: none;
+}
+
+.dental-table tr:nth-child(even) {
+    background-color: #f8fcfe;
+}
+
+/* Блок внутрішньої перелінковки */
+.internal-links-box {
+    background: linear-gradient(135deg, #f0f9ff 0%, #e6f4fa 100%);
+    padding: 30px;
+    border-radius: 16px;
+    margin-top: 55px;
+    border: 1px solid #d2e9f7;
+}
+
+.internal-links-box h2 {
+    font-size: 26px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #0d3859;
+}
+
+.internal-links-box h2::after {
+    display: none;
+}
+
+.internal-links-box ul {
+    padding-left: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.internal-links-box li {
+    margin-bottom: 0;
+}
+
+.internal-links-box a {
+    color: #1a5276;
+    text-decoration: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    transition: color 0.2s ease;
+}
+
+.internal-links-box a::before {
+    content: "→";
+    margin-right: 10px;
+    color: #00bcd4;
+    font-weight: bold;
+    transition: transform 0.2s ease;
+}
+
+.internal-links-box a:hover {
+    color: #00bcd4;
+    text-decoration: none;
+}
+
+.internal-links-box a:hover::before {
+    transform: translateX(4px);
+}
+
+/* Шапка сторінки */
+.hero-title {
+    font-size: 48px;
+    font-weight: 700;
+    color: white;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.article-meta {
+    color: #718096;
+    margin-bottom: 30px;
+    font-size: 15px;
+}
+</style>
+
 <div class="breadcumb-area bg-img bg-gradient-overlay"
-     style="background-image: url({% static 'website/img/bg-img/13.jpg' %}); height: 250px;">
+     style="background-image: url({% static 'website/img/bg-img/13.jpg' %}); height: 320px;">
+
     <div class="container h-100 d-flex justify-content-center align-items-center">
-        <h1 class="title text-white">Mouth Bacteria & Health</h1>
+        <h1 class="hero-title text-center">
+            Лікування карієсу
+        </h1>
     </div>
+
 </div>
 
 <section class="blog-details-area section-padding-100">
     <div class="container">
 
-        <div class="row justify-content-center">
+       <article class="article-content">
 
-            <!-- MAIN ARTICLE -->
-            <div class="col-lg-8 col-12">
+            <h2 class="text-center">
+                Лікування карієсу: сучасні методи, симптоми та профілактика
+            </h2>
 
-                <h2 class="mb-3 text-center">
-                    Mouth Bacteria And Lung Health
-                </h2>
+            <p class="text-center article-meta">
+                Published: 6 May 2026 • Author: Dr. Howard Miller
+            </p>
 
-                <p class="text-muted text-center mb-4">
-                    Published: 20 September 2025 • Author: Dr. Howard Miller
-                </p>
+            <img src="{% static 'website/img/bg-img/4.jpg' %}"
+                 alt="Лікування карієсу у сучасній стоматологічній клініці">
 
-                <div class="text-center">
-                    <img src="{% static 'website/img/bg-img/4.jpg' %}" alt="Dental oral bacteria illustration"
-                         style="max-width: 75%; border-radius: 10px;" class="mb-4">
-                </div>
+            <h2>Вступ</h2>
 
-                <p>
-                    Many people think oral hygiene only affects teeth and gums, but in reality oral bacteria can
-                    influence the entire body. Poor oral care increases the number of harmful bacteria that can travel
-                    from your mouth into your lungs, causing inflammation and respiratory problems.
-                </p>
+            <p>
+                За статистикою, карієс є однією з найпоширеніших стоматологічних проблем у світі. Більшість людей хоча б раз у житті стикаються з руйнуванням зубної емалі, проте далеко не всі звертаються до стоматолога на ранніх стадіях. Часто люди відкладають лікування через страх болю, нестачу часу або переконання, що маленька темна пляма не становить небезпеки. Насправді ж навіть незначний карієс може швидко перейти у глибоке ураження зуба та спричинити серйозні ускладнення.
+            </p>
 
-                <p>
-                    When harmful mouth bacteria enter the respiratory system, they may increase the risk of infections
-                    such as pneumonia, bronchitis and breathing difficulties. This is especially dangerous for elderly
-                    people, smokers and individuals with weakened immunity.
-                </p>
+            <p>
+                Лікування карієсу на ранніх стадіях дозволяє уникнути складних процедур, сильного болю та значних фінансових витрат. Сучасна стоматологія пропонує багато безболісних методів лікування, які допомагають зберегти здоров’я зубів максимально комфортно для пацієнта. У цієї статті розглянемо основні причини виникнення карієсу, симптоми, сучасні методи лікування та ефективні способи профілактики.
+            </p>
 
-                <blockquote style="font-size:18px; font-style:italic;
-                                    border-left:4px solid #00bcd4;
-                                    padding-left:15px; margin: 25px 0;">
-                    “Healthy mouth — healthy body. Oral hygiene is not only about a beautiful smile,
-                    it is about protecting your whole health.”
-                </blockquote>
+            <blockquote>
+                “Раннє лікування карієсу допомагає зберегти здоров’я зубів та уникнути складних стоматологічних процедур.”
+            </blockquote>
 
-                <p>
-                    Regular brushing, flossing and professional dental cleanings significantly reduce dangerous
-                    bacteria. Visiting the dentist every six months helps detect problems early and prevents serious
-                    complications not only in the mouth, but also in the lungs.
-                </p>
+            <h2>Що таке карієс і чим він небезпечний</h2>
 
-                <p>
-                    A few minutes of daily care can save you from serious medical problems in the future.
-                    Your smile is the first step to your health.
-                </p>
+            <p>
+                Карієс — це поступове руйнування твердих тканин зуба під впливом бактерій, кислот та зубного нальоту. Найчастіше процес починається з пошкодження емалі, після чого переходить у глибші тканини зуба — дентин і пульпу. На перших стадіях карієс може виглядати як невелика біла або темна пляма, однак без лікування проблема поступово прогресує.
+            </p>
 
-                <a href="{% url 'home' %}" class="btn dento-btn mt-4">Back to Home</a>
+            <p>
+                Основною причиною руйнування емалі є діяльність бактерій, які накопичуються в зубному нальоті. Після вживання їжі, особливо солодкої, бактерії починають виробляти кислоти, що негативно впливають на поверхню зубів. З часом емаль втрачає мінерали, стає слабшою, а на її поверхні утворюються мікротріщини та каріозні порожнини.
+            </p>
+
+            <p>
+                Небезпека карієсу полягає в тому, що без лікування інфекція проникає глибше та може спричинити пульпіт, періодонтит або навіть втрату зуба. Крім цього, хронічні запальні процеси у ротовій порожнині негативно впливають на загальний стан організму. Людина може відчувати постійний дискомфорт, біль, підвищену чутливість зубів та проблеми під час вживання їжі.
+            </p>
+            
+            <p>
+                Саме тому стоматологи рекомендують не ігнорувати навіть незначні зміни кольору емалі чи короткочасний біль. Чим раніше буде виявлено карієс, тим простішим і швидшим буде лікування.
+            </p>
+
+            <h2>Основні причини виникнення карієсу</h2>
+
+            <h3>Недостатня гігієна ротової порожнини</h3>
+
+            <p>
+                Найпоширенішою причиною розвитку карієсу є неправильний або нерегулярний догляд за зубами. Якщо людина недостатньо ретельно чистить зуби, на поверхні емалі накопичується наліт, який стає ідеальним середовищем для бактерій. Особливо небезпечними є важкодоступні місця між зубами та жувальні поверхні.
+            </p>
+
+            <h3>Надмірне споживання цукру</h3>
+
+            <p>
+                Солодощі, газовані напої та продукти з великою кількістю швидких вуглеводів значно підвищують ризик розвитку карієсу. Бактерії активно переробляють цукор у кислоти, які руйнують емаль. Часте вживання солодкого без належної гігієни створює сприятливі умови для поширення каріозного процесу.
+            </p>
+
+            <h3>Вплив бактерій та зубного нальоту</h3>
+
+            <p>
+                У ротовій порожнині постійно присутні бактерії, однак саме зубний наліт створює умови для їх активного розмноження. Якщо наліт не видаляти регулярно, він поступово твердне та перетворюється на зубний камінь. Це збільшує ризик не лише карієсу, а й запалення ясен.
+            </p>
+
+            <h3>Генетичні та супутні фактори</h3>
+
+            <p>
+                Стан зубної емалі частково залежить від спадковості. У деяких людей емаль є більш чутливою до впливу кислот та бактерій. Також розвитку карієсу можуть сприяти захворювання шлунково-кишкового тракту, нестача кальцію та фтору, сухість у роті або порушення обміну речовин.
+            </p>
+
+            <h2>Симптоми та стадії розвитку карієсу</h2>
+
+            <h3>Карієс у стадії білої плями</h3>
+
+            <p>
+                Початкова стадія карієсу часто залишається непомітною. На поверхні зуба з’являється матова біла пляма, яка свідчить про втрату мінералів емаллю. На цьому етапі людина зазвичай не відчуває болю чи дискомфорту, тому проблему часто ігнорують. Саме в цей період лікування є найпростішим і може проводитися без свердління. Стоматолог може призначити ремінералізацію або фторування для відновлення структури емалі.
+            </p>
+
+            <h3>Поверхневий карієс</h3>
+
+            <p>
+                На наступній стадії емаль починає руйнуватися сильніше, а пляма темніє. Зуб може ставати чутливим до холодного, гарячого або солодкого. Іноді людина помічає невелику шорсткість на поверхні зуба. Поверхневий карієс ще не проникає глибоко у тканини зуба, тому сучасні методи лікування дозволяють швидко усунути проблему та зберегти максимальну кількість здорових тканин.
+            </p>
+
+            <h3>Середній та глибокий карієс</h3>
+
+            <p>
+                Якщо карієс не лікувати, бактерії проникають у дентин — внутрішню тканину зуба. На цьому етапі з’являється біль, неприємний запах з рота, підвищена чутливість та дискомфорт під час їжі. Глибокий карієс може досягати пульпи — нервово-судинного пучка зуба. У такому випадку біль стає сильним і тривалим. Людині може знадобитися складніше лікування, включаючи очищення кореневих каналів.
+            </p>
+            
+            <p>Звертатися до стоматолога потрібно при появі:</p>
+            <ul class="custom-list">
+                <li>білих або темних плям на емалі;</li>
+                <li>чутливості зубів;</li>
+                <li>болю під час їжі;</li>
+                <li>неприємного запаху з рота;</li>
+                <li>видимих пошкоджень зуба.</li>
+            </ul>
+
+            <h2>Сучасні методи лікування карієсу</h2>
+
+            <h3>Класичне пломбування</h3>
+
+            <p>
+                Пломбування залишається одним із найпоширеніших методів лікування карієсу. Під час процедури стоматолог видаляє уражені тканини зуба, очищає порожнину та встановлює пломбу. Сучасні фотополімерні матеріали дозволяють підібрати колір пломби максимально близько до природного кольору зубів. Завдяки сучасній анестезії процедура проходить практично безболісно навіть при глибокому карієсі.
+            </p>
+
+            <h3>Лікування за технологією ICON</h3>
+
+            <p>
+                Технологія ICON використовується для лікування початкового карієсу без свердління. На поверхню зуба наносять спеціальний полімерний склад, який проникає у пошкоджені ділянки емалі та зупиняє розвиток карієсу. Основною перевагою методу є відсутність болю та збереження здорових тканин зуба. Процедура добре підходить дітям, підліткам та людям, які бояться стоматологічного лікування.
+            </p>
+
+            <h3>Озонотерапія</h3>
+
+            <p>
+                Озонотерапія є сучасним методом лікування поверхневого карієсу. Озон має сильний антибактеріальний ефект та допомагає знищувати шкідливі бактерії без використання бормашини. Процедура проходить швидко, не викликає болю та часто використовується для лікування дітей.
+            </p>
+
+            <h3>Лазерне лікування</h3>
+
+            <p>
+                Лазер дозволяє точно видаляти уражені тканини зуба, не пошкоджуючи здорові ділянки. Крім цього, лазер додатково дезінфікує поверхню зуба та знижує ризик повторного розвитку карієсу. Такий метод вважається одним із найбільш комфортних для пацієнта, проте має вищу вартість порівняно з класичним лікуванням.
+            </p>
+
+            <h3>Ремінералізація та фторування</h3>
+
+            <p>
+                На ранніх стадіях карієсу стоматолог може рекомендавати ремінералізацію або фторування. На зуби наносять спеціальні препарати з кальцієм та фтором, які зміцнюють емаль та допомагають відновити її структуру. Ці методи є повністю безболісними та часто використовуються для профілактики карієсу у дітей і дорослих.
+            </p>
+
+            <h2>Лікування карієсу у дітей</h2>
+
+            <h3>Особливості дитячого лікування</h3>
+            <p>
+                Карієс у дітей розвивається швидше, ніж у дорослих, тому дуже важливо вчасно помітити проблему. Лікування молочних зубів є необхідним, оскільки інфекція може впливати на формування постійних зубів. Під час дитячого лікування стоматологи приділяють особливу увагу психологічному комфорту дитини. Важливо, щоб перший досвід відвідування стоматолога був максимально спокійним та безболісним.
+            </p>
+
+            <h3>Безболісні методи для дітей</h3>
+            <p>Сучасні стоматологічні клініки активно використовують безболісні методи лікування:</p>
+            <ul class="custom-list">
+                <li>ICON;</li>
+                <li>озонотерапію;</li>
+                <li>фторування;</li>
+                <li>ремінералізацію.</li>
+            </ul>
+            <p>Такі процедури дозволяють уникнути страху перед стоматологом та допомагають дитині спокійніше ставитися до лікування зубів у майбутньому.</p>
+
+            <h2>Як запобігти розвитку карієсу</h2>
+
+            <h3>Правильна гігієна</h3>
+            <p>
+                Основою профілактики є регулярне чищення зубів двічі на день. Також важливо використовувати зубну нитку та ополіскувачі для ротової порожнини. Правильна техніка чищення допомагає ефективно видаляти наліт та бактерії.
+            </p>
+
+            <h3>Регулярні огляди у стоматолога</h3>
+            <p>
+                Навіть за відсутності болю рекомендується відвідувати стоматолога щонайменше двічі на рік. Профілактичні огляди дозволяють виявити карієс на ранніх стадіях, коли лікування є простішим і дешевшим.
+            </p>
+
+            <h3>Професійне чищення зубів</h3>
+            <p>
+                Професійна гігієна допомагає видалити зубний камінь та наліт у важкодоступних місцях. Також стоматолог може провести фторування для зміцнення емалі та профілактики карієсу.
+            </p>
+
+            <h2>Порівняння сучасних методів лікування карієсу</h2>
+
+            <p>
+                Класичне пломбування є універсальним методом лікування та використовується при середньому і глибокому карієсі. Воно дозволяє ефективно усунути уражені тканини, проте потребує механічного втручання.
+            </p>
+
+            <p>
+                Технологія ICON підходить для початкового карієсу та дозволяє лікувати зуби без свердління. Метод є безболісним, однак ефективний лише на ранніх стадіях.
+            </p>
+
+            <p>
+                Лазерне лікування забезпечує високу точність та комфорт для пацієнта, але має вищу вартість. Озонотерапія добре підходить для поверхневого карієсу та дитячої стоматології. Вибір методу лікування залежить від стадії карієсу, стану зуба та рекомендацій стоматолога.
+            </p>
+
+            <div class="dental-table-responsive">
+                <table class="dental-table">
+                    <thead>
+                        <tr>
+                            <th>Метод лікування</th>
+                            <th>Стадія карієсу</th>
+                            <th>Переваги</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><b>Класичне пломбування</b></td>
+                            <td>Середній та глибокий</td>
+                            <td>Універсальність, відновлення форми зуба фотополімерами</td>
+                        </tr>
+                        <tr>
+                            <td><b>Технологія ICON</b></td>
+                            <td>Початкова (пляма)</td>
+                            <td>Без свердління, абсолютно безболісно, зберігає тканини</td>
+                        </tr>
+                        <tr>
+                            <td><b>Лазерне лікування</b></td>
+                            <td>Поверхневий та середній</td>
+                            <td>Висока точність, дезінфекція порожнини, комфорт</td>
+                        </tr>
+                        <tr>
+                            <td><b>Озонотерапія</b></td>
+                            <td>Поверхневий</td>
+                            <td>Знищення бактерій без бормашини, ідеально для дітей</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
 
-            <!-- SIDE INFO PANEL -->
-            <div class="col-lg-4 col-12 mt-5 mt-lg-0">
+            <h2>Часті запитання (FAQ)</h2>
 
-                <div class="p-4 shadow rounded">
-                    <h2 class="mb-3">Quick Health Tips</h2>
-
-                    <ul style="line-height: 1.9;">
-                        <li>Brush teeth twice a day</li>
-                        <li>Use fluoride toothpaste</li>
-                        <li>Do not forget flossing</li>
-                        <li>Visit dentist every 6 months</li>
-                        <li>Avoid constant sugary drinks</li>
-                    </ul>
-                </div>
-
-                <div class="p-4 shadow rounded mt-4">
-                    <h3 class="mb-3">Why it matters?</h3>
-                    <p>
-                        Oral health affects your whole body. Taking care of your smile helps prevent infections,
-                        improves breathing, confidence and overall health.
-                    </p>
-                </div>
-
+            <div class="faq-item">
+                <h3>Чи можна вилікувати карієс без свердління?</h3>
+                <p>Так, на ранніх стадіях карієсу можливе лікування без свердління за допомогою технології ICON, озонотерапії або ремінералізації.</p>
             </div>
 
-        </div>
+            <div class="faq-item">
+                <h3>Чи боляче лікувати карієс?</h3>
+                <p>Сучасна стоматологія використовує ефективну анестезію, тому більшість процедур проходить без болю та сильного дискомфорту.</p>
+            </div>
 
+            <div class="faq-item">
+                <h3>Скільки коштує лікування карієсу?</h3>
+                <p>Вартість залежить від стадії карієсу та обраного методу лікування. Початкові стадії лікуються значно дешевше, ніж глибокий карієс або пульпіт.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Як часто потрібно проходити огляд?</h3>
+                <p>Стоматологи рекомендують проходити профілактичний огляд кожні шість місяців.</p>
+            </div>
+
+            <h2>Висновок</h2>
+
+            <p>
+                Карієс є серйозною стоматологічною проблемою, яка без своєчасного лікування може призвести до ускладнень та втрати зуба. Сучасні методи лікування дозволяють ефективно усувати каріозні ураження навіть без болю та свердління. Особливо важливо звертатися до стоматолога на ранніх стадіях, коли проблему можна вирішити швидко та максимально щадними методами.
+            </p>
+
+            <p>
+                Регулярна профілактика, правильна гігієна ротової порожнини та профілактичні огляди допомагають значно знизити ризик розвитку карієсу. Турбота про здоров’я зубів сьогодні дозволить уникнути складного лікування у майбутньому.
+            </p>
+
+            <div class="internal-links-box">
+                <h2>Корисні матеріали</h2>
+                <ul>
+                    <li>
+                        <a href="/professional-cleaning">
+                            Професійне чищення зубів
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/gum-disease-prevention">
+                            Профілактика захворювань ясен
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/children-dentistry">
+                            Лікування зубів у дітей
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/dental-diagnostics">
+                            Сучасна стоматологічна діагностика
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        </article>
     </div>
 </section>
 
