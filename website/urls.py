@@ -1,4 +1,5 @@
 from django.urls import path
+from django.views.generic import TemplateView
 from . import views
 from .views import free_consultation
 
@@ -14,6 +15,7 @@ urlpatterns = [
     path('blog-details/1/', views.blog1, name='blog1'),
     path('blog-details/2/', views.blog2, name='blog2'),
     path('blog-details/3/', views.blog3, name='blog3'),
+    path('privacy-policy/', TemplateView.as_view(template_name='privacy_policy.html'), name='privacy_policy'),
 
 
 
