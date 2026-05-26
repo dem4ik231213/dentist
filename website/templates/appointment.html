@@ -1,16 +1,14 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block title %}Set an Appointmen to see Dr. Hovard {% endblock %}
-{% block meta_description %} This is  Dento Dentistry website {% endblock %}
-
+{% block title %}Записатися на прийом до д-ра Говарда | Dento{% endblock %}
+{% block meta_description %}Запис на прийом до стоматологічної клініки Dento. Підтвердіть дату й час візиту — ми зв'яжемося з вами для уточнення деталей.{% endblock %}
 {% block content %}
-
-  <!-- ***** Breadcrumb Area Start ***** -->
+  <!-- ***** Початок зони «Хлібні крихти» ***** -->
   <div class="breadcumb-area bg-img bg-gradient-overlay" style="background-image: url({% static 'website/img/bg-img/12.jpg' %});">
     <div class="container h-100">
       <div class="row h-100 align-items-center">
         <div class="col-12">
-          <h2 class="title">Appointment</h2>
+          <h1 class="title">Запис на прийом</h1>
         </div>
       </div>
     </div>
@@ -21,56 +19,46 @@
         <div class="col-12">
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="#"><i class="fa fa-home"></i> Home</a></li>
-              <li class="breadcrumb-item active" aria-current="page">Set Appointment</li>
+              <li class="breadcrumb-item"><a href="#"><i class="fa fa-home"></i> Головна</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Записатися на прийом</li>
             </ol>
           </nav>
         </div>
       </div>
     </div>
   </div>
-  <!-- ***** Breadcrumb Area End ***** -->
-  
-  <!-- ***** Contact Area Start ***** -->
-    <!-- ***** Contact Area End ***** -->
-<center>
-  <h1>Review Your information:</h1>
-  <strong>Your Name: </strong>{{your_name}}</br>
-  <strong>Phone: </strong>{{your_phone}}</br>
-  <strong>Email: </strong>{{your_email}}</br>
-  <strong>Address: </strong>{{your_address}}</br>
-  <strong>When: </strong>{{your_schedule}}</br>
-  <strong>Appointment: </strong>{{your_date}}</br>
-  <strong>Your Message: </strong>{{your_message}}</br>
+  <!-- ***** Кінець зони «Хлібні крихти» ***** -->
 
+  <!-- ***** Початок секції контактів ***** -->
+  <!-- ***** Кінець секції контактів ***** -->
 
-</br></br>
-<strong>Note:</strong> We will contact you shortly by telephone to confirm your appointment
+<div class="container" style="max-width: 600px; margin-top: 50px; margin-bottom: 50px;">
+      <div style="background: #ffffff; padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: center;">
 
-</center>
+          <div style="color: #28a745; font-size: 50px; margin-bottom: 20px;">
+              <i class="fa fa-check-circle"></i>
+          </div>
 
- </br> </br></br></br>
-{% endblock %}
-  
+          <h2 style="color: #333; margin-bottom: 30px;">Дані успішно отримано!</h2>
 
+          <div style="text-align: left; background: #f8f9fa; padding: 20px; border-radius: 10px; border-left: 5px solid #007bff; margin-bottom: 20px;">
+              <p><strong>Ім'я:</strong> {{ your_name }}</p>
+              <p><strong>Телефон:</strong> {{ your_phone }}</p>
+              <p><strong>Email:</strong> {{ your_email }}</p>
+              <p><strong>Час:</strong> {{ your_schedule }}</p>
+              <p><strong>Дата:</strong> {{ your_date }}</p>
+              <p><strong>Повідомлення:</strong> {{ your_message }}</p>
+          </div>
 
+          <p style="color: #666; font-size: 15px;">
+              Ми незабаром зателефонуємо вам для підтвердження запису.
+          </p>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+          <div class="mt-4">
+              <a href="{% url 'home' %}" class="btn dento-btn">
+                  <i class="fa fa-home"></i> Повернутися на головну
+              </a>
+          </div>
+      </div>
+  </div>
+ {% endblock %}

@@ -1,63 +1,42 @@
 from django.contrib import admin
+# Імпортуємо всі наші моделі бази даних
 from .models import Appointment, Doctor
-from django.utils import timezone
 from .models import ConsultationRequest
 from .models import ContactMessage
 
 
+# === НАЛАШТУВАННЯ ТАБЛИЦІ ПОВІДОМЛЕНЬ З КОНТАКТНОЇ ФОРМИ ===
 class ContactMessageAdmin(admin.ModelAdmin):
+    # list_display - це колонки, які ми будемо бачити в загальній таблиці адмінки
     list_display = ("name", "email", "status", "created")
+    # list_filter - додає бокову панель справа для фільтрації записів (наприклад, тільки "Нові")
     list_filter = ("status",)
+    # ordering - сортування. Мінус ("-created") означає, що найновіші повідомлення будуть зверху
     ordering = ("-created",)
 
 
+# === НАЛАШТУВАННЯ ТАБЛИЦІ ЗАЯВОК НА КОНСУЛЬТАЦІЮ ===
 class ConsultationRequestAdmin(admin.ModelAdmin):
     list_display = ("name", "email", "phone", "status", "created")
     list_filter = ("status",)
-    
 
 
+# === НАЛАШТУВАННЯ ТАБЛИЦІ ЛІКАРІВ ===
 class DoctorAdmin(admin.ModelAdmin):
-    list_display = ('name', 'speciality', 'status', 'busy_until')
-    list_filter = ('status',)
+    # Залишили тільки найголовніше: ім'я та спеціальність (без зайвих дат і статусів)
+    list_display = ('name', 'speciality')
 
 
+# === НАЛАШТУВАННЯ ТАБЛИЦІ ЗАПИСІВ НА ПРИЙОМ ===
 class AppointmentAdmin(admin.ModelAdmin):
+    # Відображаємо ключову інформацію про пацієнта та час його прийому
     list_display = ("name", "doctor", "date", "schedule", "created")
 
-    # --- показуємо тільки вільних лікарів ---
-    def formfield_for_foreignkey(self, db_field, request, **kwargs):
-        if db_field.name == "doctor":
-            kwargs["queryset"] = Doctor.objects.filter(
-                status="Available"
-            )
-        return super().formfield_for_foreignkey(db_field, request, **kwargs)
 
-    # --- автоматично ставимо Busy + час ---
-    def save_model(self, request, obj, form, change):
-        super().save_model(request, obj, form, change)
-
-        if obj.doctor:
-            obj.doctor.status = "Busy"
-            now = timezone.now()
-
-            if obj.schedule == "9 AM to 10 AM":
-                obj.doctor.busy_until = now.replace(hour=10, minute=0, second=0)
-
-            elif obj.schedule == "11 AM to 12 PM":
-                obj.doctor.busy_until = now.replace(hour=12, minute=0, second=0)
-
-            elif obj.schedule == "2 PM to 4 PM":
-                obj.doctor.busy_until = now.replace(hour=16, minute=0, second=0)
-
-            elif obj.schedule == "8 PM to 10 PM":
-                obj.doctor.busy_until = now.replace(hour=22, minute=0, second=0)
-
-            obj.doctor.save()
-
+# === РЕЄСТРАЦІЯ МОДЕЛЕЙ ===
+# Цей блок каже Django: "Візьми модель бази даних і застосуй до неї мої налаштування вище, 
+# щоб вона з'явилася на головній сторінці адмін-панелі"
 admin.site.register(Doctor, DoctorAdmin)
 admin.site.register(Appointment, AppointmentAdmin)
 admin.site.register(ConsultationRequest, ConsultationRequestAdmin)
 admin.site.register(ContactMessage, ContactMessageAdmin)
-
-

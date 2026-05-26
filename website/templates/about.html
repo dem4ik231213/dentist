@@ -1,16 +1,16 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block title %}  About Our Dental Clinic | Experienced Dentists | Dento {% endblock %}
-{% block meta_description %} Learn more about our professional dental team and patient-focused approach. Modern equipment, friendly care and quality treatment. Contact us today! {% endblock %}
+{% block title %}  Про нашу стоматологічну клініку | Досвідчені стоматологи | Dento {% endblock %}
+{% block meta_description %} Дізнайтеся більше про нашу професійну команду стоматологів та орієнтований на пацієнта підхід. Сучасне обладнання, доброзичливий сервіс та якісне лікування. Зв'яжіться з нами вже сьогодні! {% endblock %}
 
 {% block content %}
 
 <!-- ***** Початок зони «Хлібні крихти» ***** -->
-<div class="breadcumb-area bg-img bg-gradient-overlay" style="background-image: url({% static 'website/img/bg-img/12.jpg' %}); alt=" "Dental clinic team background">
+<div class="breadcumb-area bg-img bg-gradient-overlay" style="background-image: url({% static 'website/img/bg-img/12.jpg' %});">
   <div class="container h-100">
     <div class="row h-100 align-items-center">
       <div class="col-12">
-        <h1 class="title">About Our Dental Clinic</h1>
+        <h1 class="title">Про нашу стоматологічну клініку</h1>
       </div>
     </div>
   </div>
@@ -22,8 +22,8 @@
       <div class="col-12">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#"><i class="fa fa-home"></i> Home</a></li>
-            <h2 class="title">About Us</h2>
+            <li class="breadcrumb-item"><a href="#"><i class="fa fa-home"></i> Головна</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Про нас</li>
           </ol>
         </nav>
       </div>
@@ -40,13 +40,13 @@
       <!-- Зображення секції «Про нас» -->
       <div class="col-12 col-md-6">
         <div class="about-us-thumbnail mb-50">
-            <picture>
-          <source srcset="{% static 'website/img/bg-img/15.webp' %}" type="image/webp">
-        <img src="{% static 'website/img/bg-img/15.jpg' %}"
-             alt="Dentist consulting patient in modern dental clinic"
-             width="540"
-             height="626">
-             </picture>
+          <picture>
+            <source srcset="{% static 'website/img/bg-img/15.webp' %}" type="image/webp">
+            <img src="{% static 'website/img/bg-img/15.jpg' %}"
+                 alt="Стоматолог консультує пацієнта в сучасній стоматологічній клініці"
+                 width="540"
+                 height="626">
+          </picture>
         </div>
       </div>
 
@@ -56,25 +56,25 @@
 
           <!-- Заголовок секції -->
           <div class="section-heading">
-            <h2>About Us</h2>
+            <h2>Про нас</h2>
             <div class="line"></div>
           </div>
 
           <p>
-Dento Dentistry is a modern family dental clinic that provides
-high-quality care for patients of all ages. We offer
-<a href="{% url 'service' %}">professional dental services</a>
-using modern technology and personalized treatment plans.
-You can explore our
-<a href="{% url 'pricing' %}">pricing options</a>
-to find the best solution for your needs, or
-<a href="{% url 'contact' %}">contact our dental team</a>
-to schedule an appointment.
-</p>
+            Стоматологія Dento — це сучасна сімейна стоматологічна клініка, яка надає
+            якісну допомогу пацієнтам будь-якого віку. Ми пропонуємо
+            <a href="{% url 'service' %}">професійні стоматологічні послуги</a>
+            із застосуванням сучасних технологій та індивідуальних планів лікування.
+            Ознайомтеся з нашими
+            <a href="{% url 'pricing' %}">варіантами цін</a>,
+            щоб обрати найкраще рішення для своїх потреб, або
+            <a href="{% url 'contact' %}">зв'яжіться з нашою командою стоматологів</a>,
+            щоб записатися на прийом.
+          </p>
 
           <!-- Блок навичок -->
           <div class="single-skills-area mt-30">
-            <h3>Experience Dentist</h3>
+            <h3>Досвідчені стоматологи</h3>
             <div id="bar1" class="barfiller">
               <span class="tip"></span>
               <span class="fill" data-percentage="80"></span>
@@ -82,7 +82,7 @@ to schedule an appointment.
           </div>
 
           <div class="single-skills-area mt-30">
-            <h3>Modern Equipment</h3>
+            <h3>Сучасне обладнання</h3>
             <div id="bar2" class="barfiller">
               <span class="tip"></span>
               <span class="fill" data-percentage="65"></span>
@@ -90,7 +90,7 @@ to schedule an appointment.
           </div>
 
           <div class="single-skills-area mt-30">
-            <h3>Friendly Staff</h3>
+            <h3>Доброзичливий персонал</h3>
             <div id="bar3" class="barfiller">
               <span class="tip"></span>
               <span class="fill" data-percentage="85"></span>
@@ -118,8 +118,8 @@ to schedule an appointment.
       <div class="col-12 col-sm-6 col-lg-3">
         <div class="single-cta text-center mt-50 mb-100">
           <i class="icon_genius"></i>
-          <h2><span class="counter">20</span></h2>
-          <h3>Years Of Experience</h3>
+          <h2><span class="counter">15</span></h2>
+          <h3>Років досвіду</h3>
         </div>
       </div>
 
@@ -127,23 +127,23 @@ to schedule an appointment.
         <div class="single-cta text-center mt-50 mb-100">
           <i class="icon_heart_alt"></i>
           <h2><span class="counter">700</span>+</h2>
-          <h3>Happy Patients</h3>
+          <h3>Задоволених пацієнтів</h3>
         </div>
       </div>
 
       <div class="col-12 col-sm-6 col-lg-3">
         <div class="single-cta text-center mt-50 mb-100">
           <i class="icon_book_alt"></i>
-          <h2><span class="counter">120</span></h2>
-          <h3>Certificate</h3>
+          <h2><span class="counter">25</span></h2>
+          <h3>Сертифікатів</h3>
         </div>
       </div>
 
       <div class="col-12 col-sm-6 col-lg-3">
         <div class="single-cta text-center mt-50 mb-100">
           <i class="icon_id"></i>
-          <h2><span class="counter">40</span>+</h2>
-          <h3>Dentist</h3>
+          <h2><span class="counter">3</span></h2>
+          <h3>Стоматологи</h3>
         </div>
       </div>
 
@@ -166,7 +166,7 @@ to schedule an appointment.
     <div class="row">
       <div class="col-12">
         <div class="section-heading text-center">
-          <h2>Our Dentist</h2>
+          <h2>Наші стоматологи</h2>
           <div class="line"></div>
         </div>
       </div>
@@ -177,13 +177,13 @@ to schedule an appointment.
       <!-- Профіль стоматолога -->
       <div class="col-12 col-sm-6 col-md-4">
         <div class="single-dentist-area mb-100">
-        <picture>
-          <source srcset="/static/website/img/bg-img/9.webp" type="image/webp">
-          <img src="/static/website/img/bg-img/9.png"
-          alt="Dr David Bennett implant dentistry specialist"
-          width="350"
-          height="350">
-          loading="lazy">
+          <picture>
+            <source srcset="/static/website/img/bg-img/doctor1.webp" type="image/webp">
+            <img src="/static/website/img/bg-img/doctor1.jpg"
+                 alt="Доктор Андрій Коваленко — спеціаліст з ортодонтії та брекетів"
+                 width="350"
+                 height="350"
+                 loading="lazy">
           </picture>
           <div class="dentist-content">
 
@@ -196,8 +196,8 @@ to schedule an appointment.
 
             <!-- Інформація про стоматолога -->
             <div class="dentist-info bg-gradient-overlay">
-              <h3>David Bennett</h3>
-              <p>Implant Expert</p>
+              <h3>Андрій Коваленко</h3>
+              <p>Стоматолог-ортодонт</p>
             </div>
 
           </div>
@@ -205,61 +205,62 @@ to schedule an appointment.
       </div>
 
       <!-- Профіль стоматолога -->
-        <div class="col-12 col-sm-6 col-md-4">
-          <div class="single-dentist-area mb-100">
-            <picture>
-            <source srcset="/static/website/img/bg-img/10.webp" type="image/webp">
-            <img src="/static/website/img/bg-img/10.png"
-            alt="Dr Michael Sterling orthodontics and braces expert">
-             width="350"
-             height="350">
-             loading="lazy">
-             </picture>
-            <div class="dentist-content">
-              <!-- Cоцмережі стоматолога-->
-              <div class="dentist-social-info">
-                <a href="#"><i class="fa fa-facebook"></i></a>
-                <a href="#"><i class="fa fa-twitter"></i></a>
-                <a href="#"><i class="fa fa-google-plus"></i></a>
-              </div>
-              <!-- Інформація про стоматолога -->
-              <div class="dentist-info bg-gradient-overlay">
-                <h5>Michael Sterling</h5>
-                <p>Orthodontics & Braces Expert</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Профіль стоматолога -->
-        <div class="col-12 col-sm-6 col-md-4">
-          <div class="single-dentist-area mb-100">
-            <picture>
-            <source srcset="/static/website/img/bg-img/11.webp" type="image/webp">
-            <img src="/static/website/img/bg-img/11.png"
-            alt="Dr Emily Parker pediatric and family dentist">
-            width="350"
-            height="350">
-            loading="lazy">
+      <div class="col-12 col-sm-6 col-md-4">
+        <div class="single-dentist-area mb-100">
+          <picture>
+            <source srcset="/static/website/img/bg-img/doctor2.webp" type="image/webp">
+            <img src="/static/website/img/bg-img/doctor2.jpg"
+                 alt="Доктор Олександр Мельник — стоматолог-терапевт,головний лікар"
+                 width="350"
+                 height="350"
+                 loading="lazy">
           </picture>
-            <div class="dentist-content">
-              <!-- Соцмережі стоматолога -->
-              <div class="dentist-social-info">
-                <a href="#"><i class="fa fa-facebook"></i></a>
-                <a href="#"><i class="fa fa-twitter"></i></a>
-                <a href="#"><i class="fa fa-google-plus"></i></a>
-              </div>
-              <!-- Інформація про стоматолога -->
-              <div class="dentist-info bg-gradient-overlay">
-                <h5>Emily Parker</h5>
-                <p>Pediatric & Family Dentistry</p>
-              </div>
+          <div class="dentist-content">
+            <!-- Соцмережі стоматолога -->
+            <div class="dentist-social-info">
+              <a href="#"><i class="fa fa-facebook"></i></a>
+              <a href="#"><i class="fa fa-twitter"></i></a>
+              <a href="#"><i class="fa fa-google-plus"></i></a>
+            </div>
+            <!-- Інформація про стоматолога -->
+            <div class="dentist-info bg-gradient-overlay">
+              <h3>Олександр Мельник</h3>
+              <p>Стоматолог-терапевт, головний лікар</p>
             </div>
           </div>
         </div>
       </div>
+
+      <!-- Профіль стоматолога -->
+      <div class="col-12 col-sm-6 col-md-4">
+        <div class="single-dentist-area mb-100">
+          <picture>
+            <source srcset="/static/website/img/bg-img/doctor3.webp" type="image/webp">
+            <img src="/static/website/img/bg-img/doctor3.jpg"
+                 alt="Доктор Ірина Шевченко — дитячий стоматолог"
+                 width="350"
+                 height="350"
+                 loading="lazy">
+          </picture>
+          <div class="dentist-content">
+            <!-- Соцмережі стоматолога -->
+            <div class="dentist-social-info">
+              <a href="#"><i class="fa fa-facebook"></i></a>
+              <a href="#"><i class="fa fa-twitter"></i></a>
+              <a href="#"><i class="fa fa-google-plus"></i></a>
+            </div>
+            <!-- Інформація про стоматолога -->
+            <div class="dentist-info bg-gradient-overlay">
+              <h3>Ірина Шевченко</h3>
+              <p>Дитячий стоматолог</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
-  </section>
+  </div>
+</section>
 <!-- ***** Кінець секції стоматологів ***** -->
 
 {% endblock %}

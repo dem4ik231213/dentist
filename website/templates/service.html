@@ -1,312 +1,416 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block title %}Dental Services in Hendersonville | Full Care | Dento {% endblock %}
-{% block meta_description %} Explore our complete dental services for adults and kids. Preventive care, treatment and modern solutions for a healthy smile. Book now! {% endblock %}
-
+{% block title %}Стоматологічні послуги у Львові | Повний догляд | Dento{% endblock %}
+{% block meta_description %}Ознайомтеся з повним переліком стоматологічних послуг для дорослих та дітей у Львові. Профілактика, лікування та сучасні рішення для здорової усмішки. Записуйтеся на прийом!{% endblock %}
 {% block content %}
 
+<style>
+/* === Картки послуг — оновлений стиль === */
+.services-intro {
+  max-width: 720px;
+  margin: 0 auto 60px;
+  text-align: center;
+  color: #4a5568;
+  font-size: 17px;
+  line-height: 1.8;
+}
 
-  <!-- ***** Початок області навігаційного шляху ***** -->
-  <div class="breadcumb-area bg-img bg-gradient-overlay" style="background-image: url({% static 'website/img/bg-img/12.jpg' %});">
-    <div class="container h-100">
-      <div class="row h-100 align-items-center">
-        <div class="col-12">
-          <h1 class="title">Dental Services in Hendersonville</h1>
+.service-card {
+  background: #fff;
+  border: 1px solid #eef5fa;
+  border-radius: 16px;
+  padding: 36px 28px 30px;
+  text-align: center;
+  height: 100%;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  position: relative;
+  overflow: hidden;
+}
+.service-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #00bcd4, #0a8fa3);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .3s ease;
+}
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 35px rgba(13, 56, 89, 0.08);
+  border-color: #cfeef4;
+}
+.service-card:hover::before { transform: scaleX(1); }
+
+.service-card-icon {
+  width: 86px;
+  height: 86px;
+  margin: 0 auto 22px;
+  background: linear-gradient(135deg, #f0fbfd 0%, #e3f6f9 100%);
+  border-radius: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform .3s ease;
+}
+.service-card:hover .service-card-icon {
+  transform: scale(1.08) rotate(-3deg);
+}
+.service-card-icon img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.service-card h3 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #0d3859;
+  margin-bottom: 14px;
+}
+
+.service-card p {
+  color: #4a5568;
+  font-size: 15px;
+  line-height: 1.75;
+  margin-bottom: 0;
+}
+
+.service-card a {
+  color: #00bcd4;
+  font-weight: 600;
+  border-bottom: 1px dashed transparent;
+  transition: border-color .2s;
+}
+.service-card a:hover {
+  border-color: #00bcd4;
+  text-decoration: none;
+}
+
+@media (max-width: 575px) {
+  .service-card { padding: 28px 22px; }
+  .service-card h3 { font-size: 20px; }
+
+  /* === Вирівнювання висот карток блогу === */
+.dento-blog-area .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.dento-blog-area .single-blog-item {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.dento-blog-area .blog-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.dento-blog-area .blog-content p {
+  flex-grow: 1;
+}
+}
+</style>
+
+<!-- ***** Початок навігаційного шляху ***** -->
+<div class="breadcumb-area bg-img bg-gradient-overlay" style="background-image: url({% static 'website/img/bg-img/12.jpg' %});">
+  <div class="container h-100">
+    <div class="row h-100 align-items-center">
+      <div class="col-12">
+        <h1 class="title">Стоматологічні послуги у Львові</h1>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="breadcumb--con">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#"><i class="fa fa-home"></i> Головна</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Послуги</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ***** Кінець навігаційного шляху ***** -->
+
+<!-- ***** Початок секції послуг ***** -->
+<section class="dento-services-area mt-50 mb-50">
+  <div class="container">
+
+    <p class="services-intro">
+      Ми надаємо повний спектр стоматологічних послуг — від профілактичного огляду до сучасної
+      імплантації. Для кожного пацієнта складаємо індивідуальний план лікування з урахуванням
+      потреб, бюджету та стану зубів.
+    </p>
+
+    <div class="row">
+
+      <!-- Відбілювання зубів -->
+      <div class="col-12 col-sm-6 col-lg-4 mb-30">
+        <div class="service-card">
+          <div class="service-card-icon">
+            <img src="{% static 'website/img/core-img/s6.png' %}" alt="Іконка послуги відбілювання зубів">
+          </div>
+          <h3>Відбілювання зубів</h3>
+          <p>
+            Професійне відбілювання, яке безпечно освітлює усмішку та покращує колір емалі з
+            тривалим результатом. Перегляньте наші
+            <a href="{% url 'pricing' %}">варіанти цін</a>
+            або <a href="{% url 'contact' %}">запишіться на прийом</a>.
+          </p>
+        </div>
+      </div>
+
+      <!-- Імпланти -->
+      <div class="col-12 col-sm-6 col-lg-4 mb-30">
+        <div class="service-card">
+          <div class="service-card-icon">
+            <img src="{% static 'website/img/core-img/s7.png' %}" alt="Іконка послуги встановлення імплантів">
+          </div>
+          <h3>Зубні імпланти</h3>
+          <p>
+            Сучасні рішення з імплантації допомагають відновити втрачені зуби та покращити стан
+            ротової порожнини. Дізнайтеся більше про
+            <a href="{% url 'about' %}">наших лікарів</a>
+            та доступні
+            <a href="{% url 'pricing' %}">плани лікування</a>.
+          </p>
+        </div>
+      </div>
+
+      <!-- Відсутні зуби -->
+      <div class="col-12 col-sm-6 col-lg-4 mb-30">
+        <div class="service-card">
+          <div class="service-card-icon">
+            <img src="{% static 'website/img/core-img/s8.png' %}" alt="Іконка відновлення відсутніх зубів">
+          </div>
+          <h3>Відсутні зуби</h3>
+          <p>
+            Пропонуємо мостоподібні протези, імпланти та знімні протези для комфортного
+            відновлення усмішки. Перегляньте
+            <a href="{% url 'pricing' %}">варіанти лікування</a>
+            або <a href="{% url 'contact' %}">запишіться на консультацію</a>.
+          </p>
+        </div>
+      </div>
+
+      <!-- Естетична стоматологія -->
+      <div class="col-12 col-sm-6 col-lg-4 mb-30">
+        <div class="service-card">
+          <div class="service-card-icon">
+            <img src="{% static 'website/img/core-img/s9.png' %}" alt="Іконка естетичної стоматології">
+          </div>
+          <h3>Естетична стоматологія</h3>
+          <p>
+            Вініри, бондинг та естетична корекція покращують форму, колір і вигляд зубів.
+            Більше про
+            <a href="{% url 'about' %}">нашу команду</a>
+            та доступні
+            <a href="{% url 'pricing' %}">варіанти лікування</a>.
+          </p>
+        </div>
+      </div>
+
+      <!-- Огляд -->
+      <div class="col-12 col-sm-6 col-lg-4 mb-30">
+        <div class="service-card">
+          <div class="service-card-icon">
+            <img src="{% static 'website/img/core-img/s10.png' %}" alt="Іконка стоматологічного огляду">
+          </div>
+          <h3>Огляд та діагностика</h3>
+          <p>
+            Ретельний огляд, рентген та професійна консультація допомагають виявити проблеми
+            на ранніх стадіях.
+            <a href="{% url 'contact' %}">Запишіться на прийом</a>
+            або перегляньте
+            <a href="{% url 'service' %}">всі послуги</a>.
+          </p>
+        </div>
+      </div>
+
+      <!-- Зубний біль -->
+      <div class="col-12 col-sm-6 col-lg-4 mb-30">
+        <div class="service-card">
+          <div class="service-card-icon">
+            <img src="{% static 'website/img/core-img/s6.png' %}" alt="Іконка екстреної допомоги при зубному болю">
+          </div>
+          <h3>Зубний біль</h3>
+          <p>
+            Швидка допомога при зубному болю, інфекціях, переломах зубів та інших невідкладних
+            стоматологічних проблемах. <a href="{% url 'contact' %}">Зв'яжіться з нами</a>
+            якомога швидше.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- ***** Кінець секції послуг ***** -->
+
+<!-- ***** Початок секції відгуків ***** -->
+<section class="testimonials-area section-padding-100 bg-img bg-gradient-overlay jarallax clearfix" style="background-image: url('{% static 'website/img/bg-img/7.jpg' %}');">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="testimonials-slides owl-carousel">
+
+          <!-- Відгук 1 -->
+<div class="single-testimonial-slide d-flex align-items-center">
+  <div class="testimonial-thumb">
+    <picture>
+      <source srcset="{% static 'website/img/bg-img/27.webp' %}" type="image/webp">
+      <img src="{% static 'website/img/bg-img/27.jpg' %}"
+           alt="Відгук пацієнта клініки Dento"
+           width="180"
+           height="180">
+    </picture>
+  </div>
+  <div class="testimonial-content">
+    <h5>«Я роками уникала стоматолога через негативний досвід. Тут мені надсилають SMS-нагадування за день до візиту, телефонують для підтвердження. Відтоді я постійна пацієнтка. Лікар дуже уважний і чуйний — чудове лікування та поради».</h5>
+    <h6>Олена Кравчук</h6>
+    <p>Пацієнтка клініки</p>
+  </div>
+</div>
+
+<!-- Відгук 2 -->
+<div class="single-testimonial-slide d-flex align-items-center">
+  <div class="testimonial-thumb">
+    <picture>
+      <source srcset="{% static 'website/img/bg-img/28.webp' %}" type="image/webp">
+      <img src="{% static 'website/img/bg-img/28.jpg' %}"
+           alt="Відгук пацієнта клініки Dento"
+           width="180"
+           height="180">
+    </picture>
+  </div>
+  <div class="testimonial-content">
+    <h5>«Робив імплантацію в Dento — все пройшло швидко і без болю. Лікар детально пояснив кожен етап, ціни прозорі, ніяких прихованих доплат. Дуже задоволений результатом, рекомендую друзям».</h5>
+    <h6>Микола Лисенко</h6>
+    <p>Пацієнт клініки</p>
+  </div>
+</div>
+
+<!-- Відгук 3 -->
+<div class="single-testimonial-slide d-flex align-items-center">
+  <div class="testimonial-thumb">
+    <picture>
+      <source srcset="{% static 'website/img/bg-img/29.webp' %}" type="image/webp">
+      <img src="{% static 'website/img/bg-img/29.jpg' %}"
+           alt="Відгук пацієнта клініки Dento"
+           width="180"
+           height="180">
+    </picture>
+  </div>
+  <div class="testimonial-content">
+    <h5>«Привела дитину на перший огляд — донька зовсім не боялася, лікар знайшов до неї підхід. Тепер ходимо всією родиною. Чисто, сучасне обладнання, привітний персонал. Дуже задоволені вибором клініки».</h5>
+    <h6>Тетяна Гриценко</h6>
+    <p>Мама пацієнтки</p>
+  </div>
+</div>
+
         </div>
       </div>
     </div>
   </div>
-  <div class="breadcumb--con">
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="#"><i class="fa fa-home"></i> Home</a></li>
-              <li class="breadcrumb-item active" aria-current="page">Service</li>
-            </ol>
-          </nav>
+</section>
+<!-- ***** Кінець секції відгуків ***** -->
+
+<!-- ***** Початок секції блогу ***** -->
+<section class="dento-blog-area section-padding-100-0 clearfix">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="section-heading text-center">
+          <h2>Останні новини</h2>
+          <div class="line"></div>
         </div>
       </div>
     </div>
-  </div>
-  <!-- ***** Закінчення шляху навігаційної області ***** -->
 
-  <!-- ***** Початок зони обслуговування ***** -->
-  <section class="dento-services-area mt-50 mb-50">
-    <div class="container">
-      <div class="row">
+    <div class="row">
 
-        <!-- Відбілювання зубів -->
-        <div class="col-12 col-sm-6 col-lg-4">
-          <div class="single-service--area text-center mb-50">
-            <div class="icon--">
-              <img src="{% static 'website/img/core-img/s6.png' %}" alt="Teeth whitening dental service icon">
-            </div>
-            <h2>Teeth Whitening</h2>
-            <p>
-Professional whitening that safely brightens your smile and improves
-tooth color with long-lasting results. You can check our
-<a href="{% url 'pricing' %}">dental pricing options</a>
-or <a href="{% url 'contact' %}">book an appointment</a>
-with our team.
-</p>
-          </div>
-        </div>
-
-        <!-- Послуга:Зубні імланти -->
-        <div class="col-12 col-sm-6 col-lg-4">
-          <div class="single-service--area text-center mb-50">
-            <div class="icon--">
-              <img src="{% static 'website/img/core-img/s7.png' %}" alt="Dental implants service icon"">
-            </div>
-            <h3>Dental Implants</h3>
-            <p>
-Modern implant solutions help restore missing teeth and improve oral
-health. Learn more about our
-<a href="{% url 'about' %}">experienced dental team</a>
-and explore available
-<a href="{% url 'pricing' %}">treatment plans</a>.
-</p>
-          </div>
-        </div>
-
-        <!-- Послуга: Відновлення відсутніх зубів -->
-        <div class="col-12 col-sm-6 col-lg-4">
-          <div class="single-service--area text-center mb-50">
-            <div class="icon--">
-              <img src="{% static 'website/img/core-img/s8.png' %}" alt="Missing teeth restoration icon">
-            </div>
-            <h3>Missing Teeth</h3>
-            <p>
-We offer bridges, implants and dentures to comfortably restore your smile and confidence.
-Learn more about our
-<a href="{% url 'pricing' %}">treatment pricing options</a>
-or <a href="{% url 'contact' %}">book a consultation</a>
-with our dental specialists.
-</p>
-          </div>
-        </div>
-
-        <!-- Послуга: естетична стоматологія -->
-        <div class="col-12 col-sm-6 col-lg-4">
-          <div class="single-service--area text-center mb-50">
-            <div class="icon--">
-              <img src="{% static 'website/img/core-img/s9.png' %}" alt="Cosmetic dentistry service icon">
-            </div>
-            <h3>Cosmetic Dentistry</h3>
-            <p>
-Veneers, bonding and aesthetic corrections improve tooth shape, color and appearance.
-Read more about our
-<a href="{% url 'about' %}">experienced dental team</a>
-and check available
-<a href="{% url 'pricing' %}">cosmetic treatment plans</a>.
-</p>
-          </div>
-        </div>
-
-        <!-- Послуга: обстеження -->
-        <div class="col-12 col-sm-6 col-lg-4">
-          <div class="single-service--area text-center mb-50">
-            <div class="icon--">
-              <img src="{% static 'website/img/core-img/s10.png' %}" alt="Dental examination and checkup icon">
-            </div>
-            <h3>Examination</h3>
-            <p>
-Thorough dental check-ups, X-rays and professional consultations help detect problems early.
-You can <a href="{% url 'contact' %}">schedule an appointment</a>
-or explore our
-<a href="{% url 'service' %}">full dental services</a>.
-</p>
-          </div>
-        </div>
-
-        <!-- Послуга: лікування болю в зубах -->
-        <div class="col-12 col-sm-6 col-lg-4">
-          <div class="single-service--area text-center mb-50">
-            <div class="icon--">
-              <img src="{% static 'website/img/core-img/s6.png' %}" alt="Tooth pain emergency dental care icon">
-            </div>
-            <h3>Teeth Pain</h3>
-            <p>Quick help for toothache, infections, broken teeth and urgent dental problems.</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-  <!-- ***** Початок розділу відгуків ***** -->
-
-  <!-- ***** Testimonials Area Start ***** -->
-  <section class="testimonials-area section-padding-100 bg-img bg-gradient-overlay jarallax clearfix" style="background-image: url('{% static 'website/img/bg-img/7.jpg' %}');">
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <!-- Слайди з відгуками -->
-          <div class="testimonials-slides owl-carousel">
-            <!-- Слайд з окремими відгуками -->
-            <div class="single-testimonial-slide d-flex align-items-center">
-              <!-- Thumbnail -->
-              <div class="testimonial-thumb">
-                <picture>
-                <source srcset="{% static 'website/img/bg-img/8.webp' %}" type="image/webp">
-                 <img src="{% static 'website/img/bg-img/8.jpg' %}"
-                alt="Happy dental patient testimonial photo">
-                width="180"
-                height="180">
-                loading="lazy">
-               </picture>
-              </div>
-              <!-- Контент -->
-              <div class="testimonial-content">
-                <h5>I'd been avoiding the dentist for years due to bad experiences. A reminder SMS is sent the working day beforehand. I also had a call confirming appointment. I have been a patient ever since. My dentist is very reassuring and
-                  very helpful. Excellent treatment and advice.вЂќ</h5>
-                <h6>Arron Ramsey</h6>
-                <p>Dental Patient</p>
-              </div>
-            </div>
-
-            <!-- Слайд з окремими відгуками -->
-            <div class="single-testimonial-slide d-flex align-items-center">
-              <!-- Thumbnail -->
-              <div class="testimonial-thumb">
-                <picture>
-                <source srcset="{% static 'website/img/bg-img/8.webp' %}" type="image/webp">
-                 <img src="{% static 'website/img/bg-img/8.jpg' %}"
-                alt="Happy dental patient testimonial photo">
-                width="180"
-                height="180">
-                loading="lazy">
-               </picture>
-              </div>
-              <!-- Контент -->
-              <div class="testimonial-content">
-                <h5>I'd been avoiding the dentist for years due to bad experiences. A reminder SMS is sent the working day beforehand. I also had a call confirming appointment. I have been a patient ever since. My dentist is very reassuring and
-                  very helpful. Excellent treatment and advice.вЂќ</h5>
-                <h6>Arron Ramsey</h6>
-                <p>Dental Patient</p>
-              </div>
-            </div>
-
-            <!-- Слайд з окремими відгуками -->
-            <div class="single-testimonial-slide d-flex align-items-center">
-              <!-- Thumbnail -->
-              <div class="testimonial-thumb">
-                <picture>
-                <source srcset="{% static 'website/img/bg-img/8.webp' %}" type="image/webp">
-                 <img src="{% static 'website/img/bg-img/8.jpg' %}"
-                alt="Happy dental patient testimonial photo">
-                width="180"
-                height="180">
-                loading="lazy">
-                </picture>
-              </div>
-              <!-- Контент -->
-              <div class="testimonial-content">
-                <h5>I'd been avoiding the dentist for years due to bad experiences. A reminder SMS is sent the working day beforehand. I also had a call confirming appointment. I have been a patient ever since. My dentist is very reassuring and
-                  very helpful. Excellent treatment and advice.вЂќ</h5>
-                <h6>Arron Ramsey</h6>
-                <p>Dental Patient</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- ***** Кінець розділу відгуків ***** -->
-
-  <!-- ***** Початок сторінки ***** -->
-  <section class="dento-blog-area section-padding-100-0 clearfix">
-    <div class="container">
-      <div class="row">
-        <!-- Заголовок розділу -->
-        <div class="col-12">
-          <div class="section-heading text-center">
-            <h2>The Latest News</h2>
-            <div class="line"></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <!-- Одиночний елемент блогу -->
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="single-blog-item mb-100">
-            <a href="{% url 'blog1' %}">
-              <picture>
+      <!-- Пост блогу -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="single-blog-item mb-100">
+          <a href="{% url 'blog1' %}">
+            <picture>
               <source srcset="{% static 'website/img/bg-img/4.webp' %}" type="image/webp">
               <img src="{% static 'website/img/bg-img/4.jpg' %}"
-              alt="Dental health article about oral bacteria and overall health">
-            width="350"
-            height="236">
-            loading="lazy">
-           </picture>
-            </a>
-            <!-- Вміст Блогу -->
-            <div class="blog-content">
-              <a href="{% url 'blog2' %}" class="post-title">How your mouth bacteria can harm your lungs</a>
-              <p>Even small dental problems can affect your whole body. Regular hygiene and timely visits help keep you healthy and reduce serious health risks.</p>
-              <div class="post-meta">
-                <a href="#"><i class="icon_clock_alt"></i> 20 Sep 2025</a>
-                <a href="#"><i class="icon_chat_alt"></i> 3 Comments</a>
-              </div>
+                   alt="Як бактерії з ротової порожнини впливають на здоров'я"
+                   width="350"
+                   height="236">
+            </picture>
+          </a>
+          <div class="blog-content">
+            <a href="{% url 'blog1' %}" class="post-title">Лікування карієсу: сучасні методи</a>
+            <p>Дізнайтесь про сучасні методи лікування карієсу, основні симптоми на різних стадіях та ефективні способи профілактики для дорослих і дітей.</p>
+            <div class="post-meta">
+              <a href="#"><i class="icon_clock_alt"></i> 6 травня 2026</a>
+              <a href="#"><i class="icon_chat_alt"></i> 3 коментарі</a>
             </div>
           </div>
         </div>
+      </div>
 
-        <!-- Одиночний елемент блогу -->
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="single-blog-item mb-100">
-            <a href="{% url 'blog2' %}">
+      <!-- Пост блогу -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="single-blog-item mb-100">
+          <a href="{% url 'blog2' %}">
             <picture>
               <source srcset="{% static 'website/img/bg-img/5.webp' %}" type="image/webp">
               <img src="{% static 'website/img/bg-img/5.jpg' %}"
-              alt="Choosing the best toothpaste for daily dental care">
-              width="350"
-            height="236">
-            loading="lazy">
-           </picture>
-            </a>
-            <!-- Вміст Блогу -->
-            <div class="blog-content">
-              <a href="{% url 'blog2' %}" class="post-title">What is the best kind of toothpaste to use?</a>
-              <p>Not all toothpaste is the same. We explain which toothpaste works best for sensitivity, whitening, gum care and everyday protection.</p>
-              <div class="post-meta">
-                <a href="#"><i class="icon_clock_alt"></i> 3 June 2025</a>
-                <a href="#"><i class="icon_chat_alt"></i> 3 Comments</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Одиночний елемент блоку -->
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="single-blog-item mb-100">
-            <a href="{% url 'blog3' %}">
-              <picture>
-              <source srcset="{% static 'website/img/bg-img/6.webp' %}" type="image/webp">
-              <img src="{% static 'website/img/bg-img/6.jpg' %}"
-              alt="How sugary drinks affect teeth enamel">
-              width="350"
-            height="236">
-            loading="lazy">
-           </picture>
-            </a>
-            <!-- Вміст Блогу -->
-            <div class="blog-content">
-              <a href="{% url 'blog3' %}" class="post-title">Why you should avoid sipping your drinks</a>
-              <p>Acidic and sugary drinks can slowly damage your enamel. Find out how to protect your teeth without giving up your favorite beverages.</p>
-              <div class="post-meta">
-                <a href="#"><i class="icon_clock_alt"></i> 25 Oct 2025</a>
-                <a href="#"><i class="icon_chat_alt"></i> 3 Comments</a>
-              </div>
+                   alt="Вибір зубної пасти для щоденного догляду"
+                   width="350"
+                   height="236">
+            </picture>
+          </a>
+          <div class="blog-content">
+            <a href="{% url 'blog2' %}" class="post-title">Яку зубну пасту краще обрати?</a>
+            <p>Не всі зубні пасти однакові. Розповідаємо, які пасти найкраще підходять для чутливості, відбілювання, догляду за яснами та щоденного захисту.</p>
+            <div class="post-meta">
+              <a href="#"><i class="icon_clock_alt"></i> 15 травня 2026</a>
+              <a href="#"><i class="icon_chat_alt"></i> 3 коментарі</a>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-<!-- ***** Кінець розділу блогу ***** -->
 
- {% endblock %}
+      <!-- Пост блогу -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="single-blog-item mb-100">
+          <a href="{% url 'blog3' %}">
+            <picture>
+              <source srcset="{% static 'website/img/bg-img/6.webp' %}" type="image/webp">
+              <img src="{% static 'website/img/bg-img/6.jpg' %}"
+                   alt="Як солодкі напої впливають на емаль зубів"
+                   width="350"
+                   height="236">
+            </picture>
+          </a>
+          <div class="blog-content">
+            <a href="{% url 'blog3' %}" class="post-title">Вплив солодких і кислих напоїв на емаль зубів</a>
+            <p>Кислі та солодкі напої поступово руйнують емаль зубів. Розповідаємо, як захистити усмішку, не відмовляючись від улюблених напоїв повністю.</p>
+            <div class="post-meta">
+              <a href="#"><i class="icon_clock_alt"></i> 30 квітня 2026</a>
+              <a href="#"><i class="icon_chat_alt"></i> 3 коментарі</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- ***** Кінець секції блогу ***** -->
+
+{% endblock %}

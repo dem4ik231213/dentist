@@ -1,6 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 
 <head>
     <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/a084dcd6eb2576d1684acf02ad914fa0/script.js"></script>
@@ -10,93 +10,71 @@
         t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "wlvbllgkla");
-</script>
+    </script>
+
   <meta charset="UTF-8">
-  <meta name="description" content="{% block meta_description %}Looking for a trusted family dentist? We provide modern dental care, comfortable treatment and fast appointments. Book your visit today!{% endblock %}">
+  <meta name="description" content="{% block meta_description %}Шукаєте надійну стоматологію у Львові? Сімейна клініка Dento — сучасне лікування, комфортний догляд та швидкий запис на прийом. Записуйтеся вже сьогодні!{% endblock %}">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-M27Z9D2EX5"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-M27Z9D2EX5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
 
-gtag('consent', 'default', {
-  'analytics_storage': 'denied',
-  'ad_storage': 'denied',
-  'ad_user_data': 'denied',
-  'ad_personalization': 'denied',
-  'wait_for_update': 500
-});
+    gtag('consent', 'default', {
+      'analytics_storage': 'denied',
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'wait_for_update': 500
+    });
 
-gtag('js', new Date());
+    gtag('js', new Date());
+    gtag('config', 'G-M27Z9D2EX5');
+  </script>
 
-gtag('config', 'G-M27Z9D2EX5');
-</script>
-  <!-- Title -->
-  <title>{% block title %}Family Dentist in Hendersonville | DMD Dental Care | Dento {% endblock %}</title>
+  <title>{% block title %}Сімейна стоматологія у Львові | Dento{% endblock %}</title>
 
-  <!-- Favicon -->
   <link rel="icon" href="{% static 'website/img/core-img/favicon.ico' %}">
   <link rel="canonical" href="{{ request.build_absolute_uri }}">
 
-  <!-- Основна таблиця стилів -->
   <link rel="stylesheet" href="{% static 'website/css/style.css' %}">
-{% block structured_data %}{% endblock %}
+
+  {% block structured_data %}{% endblock %}
+
+
+  <style>
+    /* Меню ближче до логотипа */
+    #nav {
+      margin-left: 30px;
+    }
+    #nav > li {
+      margin-right: 18px;
+    }
+    #nav > li:last-child {
+      margin-right: 0;
+    }
+    /* Текст на welcome-слайдах завжди білий */
+    .welcome-text h1,
+    .welcome-text h2,
+    .welcome-text p {
+      color: #ffffff !important;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    }
+      /* Імена стоматологів на картках завжди білі */
+    .dentist-info h3,
+    .dentist-info h5,
+    .dentist-info p {
+      color: #ffffff !important;
+    }
+    /* Прибираємо іконки соцмереж на картках стоматологів */
+    .dentist-social-info {
+      display: none !important;
+    }
+  </style>
 </head>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-
-  // CTA кнопка
-  document.querySelectorAll('.booking-btn').forEach(function(el) {
-    el.addEventListener('click', function() {
-      gtag('event', 'cta_click', {
-        button_text: 'booking_now'
-      });
-    });
-  });
-
-  // Телефон
-  document.querySelectorAll('a[href^="tel:"]').forEach(function(el) {
-    el.addEventListener('click', function() {
-      gtag('event', 'phone_click', {
-        phone_number: this.getAttribute('href')
-      });
-    });
-  });
-
-  // Форма
-  document.querySelectorAll('form').forEach(function(el) {
-    el.addEventListener('submit', function() {
-      gtag('event', 'form_submit', {
-        form_name: 'contact_form'
-      });
-    });
-  });
-
-  // Соцмережі
-  document.querySelectorAll('.social-link').forEach(function(el) {
-    el.addEventListener('click', function() {
-      gtag('event', 'social_click', {
-        platform: this.innerText.trim()
-      });
-    });
-  });
-
-  // Меню
-  document.querySelectorAll('nav a').forEach(function(el) {
-    el.addEventListener('click', function() {
-      gtag('event', 'menu_click', {
-        menu_item: this.innerText.trim()
-      });
-    });
-  });
-
-});
-</script>
-
 
 <body>
 
@@ -106,268 +84,224 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
   </div>
 
-  <!-- ***** Header Area Start ***** -->
+  <!-- ***** Початок шапки сайту ***** -->
   <header class="header-area">
-    <!-- Top Header Area -->
+    <!-- Верхня частина шапки -->
     <div class="top-header-area">
       <div class="container h-100">
         <div class="row h-100 align-items-center">
-          <!-- Top Content -->
           <div class="col-6 col-md-9 col-lg-8">
             <div class="top-header-content">
-              <a href="#" data-toggle="tooltip" data-placement="bottom" title="125 Saundersville Rd Ste 112, Hendersonville, TN 37075"><i class="fa fa-map-marker"></i> <span>125 Saundersville Rd Ste 112, Hendersonville, TN 37075, USA</span></a>
-              <a href="#" data-toggle="tooltip" data-placement="bottom" title="drHowardM@gmail.com"><i class="fa fa-envelope"></i> <span>drHowardM@gmail.com</span></a>
+              <a href="https://maps.google.com/?q=вул.+Сахарова+42+Львів" target="_blank" rel="noopener"  title="вул. Сахарова, 42, Львів"><i class="fa fa-map-marker"></i> <span>вул. Сахарова, 42, Львів, 79026</span></a>
+              <a href="mailto:info@dento.com.ua" data-toggle="tooltip" data-placement="bottom" title="info@dento.com.ua"><i class="fa fa-envelope"></i> <span>info@dento.com.ua</span></a>
             </div>
           </div>
-          <!-- Top Header Social Info -->
           <div class="col-6 col-md-3 col-lg-4">
             <div class="top-header-social-info text-right">
-              <a href="http://facebook.com/drHoward" data-toggle="tooltip" data-placement="bottom" title="Facebook"><i class="fa fa-facebook"></i></a>
-              <a href="#" data-toggle="tooltip" data-placement="bottom" title="Twitter"><i class="fa fa-twitter"></i></a>
-              <a href="#" data-toggle="tooltip" data-placement="bottom" title="Google Plus"><i class="fa fa-google-plus"></i></a>
-              <a href="#" data-toggle="tooltip" data-placement="bottom" title="Linkedin"><i class="fa fa-linkedin"></i></a>
+              <!-- <a href="https://facebook.com/dento.lviv" data-toggle="tooltip" data-placement="bottom" title="Facebook"><i class="fa fa-facebook"></i></a>-->
             </div>
           </div>
         </div>
       </div>
     </div>
-    <!-- Top Header End -->
+
     {% if messages %}
-<div style="width:100%;text-align:center;">
-  {% for message in messages %}
-  <div class="alert alert-success">
-      {{ message }}
+  <div style="width:100%;text-align:center;">
+    {% for message in messages %}
+      {% if message|stringformat:"s" != "unverified" %}
+        <div class="alert alert-{% if message.tags == 'error' %}danger{% elif message.tags == 'success' %}success{% else %}info{% endif %}">
+          {{ message|safe }}
+        </div>
+      {% endif %}
+    {% endfor %}
   </div>
-  {% endfor %}
-</div>
 {% endif %}
 
-
-
-
-
-    <!-- Main Header Start -->
     <div class="main-header-area">
       <div class="classy-nav-container breakpoint-off">
         <div class="container">
-          <!-- Classy Menu -->
           <nav class="classy-navbar justify-content-between" id="dentoNav">
 
-            <!-- Logo -->
-            <a class="nav-brand" href="{% url 'home' %}"><img src="{% static 'website/img/core-img/logo.png' %}" alt=""></a>
+            <a class="nav-brand" href="{% url 'home' %}">
+              <img src="{% static 'website/img/core-img/logo.png' %}" alt="Логотип Dento — стоматологія у Львові">
+            </a>
 
-            <!-- Navbar Toggler -->
             <div class="classy-navbar-toggler">
               <span class="navbarToggler"><span></span><span></span><span></span></span>
             </div>
 
-            <!-- Menu -->
             <div class="classy-menu">
 
-              <!-- Close Button -->
               <div class="classycloseIcon">
                 <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
               </div>
 
-              <!-- Nav Start -->
               <div class="classynav">
-                <ul id="nav">
-                  <li><a href="{% url 'home' %}">Home</a></li>
-                  <li><a href="{% url 'about' %}">About</a></li>
-                  <li><a href="{% url 'service' %}">Service</a></li>
-                  <li><a href="{% url 'pricing' %}">Pricing</a></li>
-                  <li><a href="{% url 'contact' %}">Contact</a></li>
-                </ul>
-              </div>
-              <!-- Nav End -->
-            </div>
+  <ul id="nav">
+    <li><a href="{% url 'home' %}">Головна</a></li>
+    <li><a href="{% url 'about' %}">Про нас</a></li>
+    <li><a href="{% url 'service' %}">Послуги</a></li>
+    <li><a href="{% url 'pricing' %}">Ціни</a></li>
+    <li><a href="{% url 'contact' %}">Контакти</a></li>
+    {% if user.is_authenticated %}
+      {% if user.is_staff or user.groups.all.0.name == 'Doctors' %}
+        <li><a href="{% url 'staff_dashboard' %}">Кабінет</a></li>
+      {% else %}
+        <li><a href="{% url 'dashboard' %}">Кабінет</a></li>
+      {% endif %}
+      <li><a href="{% url 'logout' %}">Вийти</a></li>
+    {% else %}
+      <li><a href="{% url 'login' %}">Увійти</a></li>
+      <li><a href="{% url 'register' %}">Реєстрація</a></li>
+    {% endif %}
+  </ul>
+</div>
 
-            <!-- Booking Now Button -->
-            <a href="{% url 'home' %}#appointment" class="btn dento-btn booking-btn">Booking Now</a>
+
           </nav>
         </div>
       </div>
     </div>
   </header>
-  <!-- ***** Header Area End ***** -->
 
 
-
-{% block content %}
-
-{% endblock %}
+  {% block content %}{% endblock %}
 
 
-
-
-
-
- <!-- ***** Footer Area Start ***** -->
+  <!-- ***** Футер ***** -->
   <footer class="footer-area bg-img bg-gradient-overlay" style="background-image: url({% static 'website/img/bg-img/3.jpg' %});">
     <div class="container">
       <div class="row">
-        <!-- Single Footer Widget -->
+
         <div class="col-12 col-sm-6 col-lg-4">
           <div class="single-footer-widget">
-            <a href="./home.html" class="d-block mb-4"><img src="{% static 'website/img/core-img/logo.png' %}" alt=""></a>
-            <p>Howard Dentistry is a trusted family dental clinic that offers comprehensive treatment, cosmetic dentistry and preventive care. We focus on quality, safety and long-term results for every patient.</p>
+            <a href="{% url 'home' %}" class="d-block mb-4">
+              <img src="{% static 'website/img/core-img/logo.png' %}" alt="Логотип Dento">
+            </a>
+            <p>Dento — сучасна сімейна стоматологічна клініка у Львові. Ми пропонуємо комплексне лікування, естетичну стоматологію, імплантацію та профілактичну допомогу. Наш пріоритет — якість, безпека та довгострокові результати для кожного пацієнта.</p>
             <div class="footer-contact">
-              <p><i class="icon_pin"></i> 125 Saundersville Rd Ste 112, Hendersonville, TN 37075, USA</p>
-              <p><i class="icon_phone"></i>+1 615-828-5833</p>
-              <p><i class="icon_mail"></i> info.dento@gmail.com</p>
+              <p><i class="icon_pin"></i> вул. Сахарова, 42, Львів, 79026</p>
+              <p><i class="icon_phone"></i> <a href="tel:+380671234567" style="color:inherit;">+380 67 123 45 67</a></p>
+              <p><i class="icon_mail"></i> <a href="mailto:info@dento.com.ua" style="color:inherit;">info@dento.com.ua</a></p>
             </div>
           </div>
         </div>
 
-        <!-- Single Footer Widget -->
         <div class="col-12 col-sm-6 col-lg">
           <div class="single-footer-widget">
-            <!-- Widget Title -->
-            <h2 class="widget-title">Opening Hours</h2>
+            <h2 class="widget-title">Графік роботи</h2>
 
-            <!-- Opening Hours -->
             <ul class="opening-hours">
-              <li><span>Mon-Wed</span> <span>8.00-18.00</span></li>
-              <li><span>Thu-Fri</span> <span>8.00-17.00</span></li>
-              <li><span>Sat</span> <span>9.00-17.00</span></li>
-              <li><span>Sun</span> <span>10.00-17.00</span></li>
-              <li><span>Holiday</span> <span>Closed</span></li>
+              <li><span>Пн–Пт</span> <span>9:00 – 19:00</span></li>
+              <li><span>Сб</span> <span>10:00 – 16:00</span></li>
+              <li><span>Нд</span> <span>Зачинено</span></li>
+              <li><span>Свята</span> <span>Зачинено</span></li>
             </ul>
           </div>
         </div>
 
-        <!-- Single Footer Widget -->
         <div class="col-12 col-sm-6 col-lg">
           <div class="single-footer-widget">
-            <!-- Widget Title -->
-            <h2 class="widget-title">Quick Link</h2>
+            <h2 class="widget-title">Корисні посилання</h2>
 
-            <!-- Quick Links Nav -->
             <nav>
               <ul class="quick-links">
-                <li><a href="#">About</a></li>
-                <li><a href="#">FAQs</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">Policy</a></li>
-                <li><a href="#">News</a></li>
-                <li><a href="#">Advisors</a></li>
-                <li><a href="#">Careers</a></li>
-                <li><a href="#">Dentist</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Legals</a></li>
+                <li><a href="{% url 'about' %}">Про нас</a></li>
+                <li><a href="{% url 'contact' %}">Контакти</a></li>
+                <li><a href="{% url 'service' %}">Послуги</a></li>
+                <li><a href="{% url 'pricing' %}">Ціни</a></li>
+                <li><a href="{% url 'privacy_policy' %}">Політика конфіденційності</a></li>
               </ul>
             </nav>
           </div>
         </div>
 
-        <!-- Single Footer Widget -->
         <div class="col-12 col-sm-6 col-lg">
           <div class="single-footer-widget">
-            <!-- Widget Title -->
-            <h2 class="widget-title">Newsletter</h2>
+            <h2 class="widget-title">Розсилка</h2>
 
-            <p>We will send out weekly newest article and some great offers</p>
-            <!-- Newsletter Form -->
+            <p>Щотижня надсилаємо нові статті про здоров'я зубів та вигідні пропозиції клініки.</p>
             <div class="footer-newsletter-form">
               <form method="POST" action="{% url 'free_consult' %}">
-              {% csrf_token %}
-             <input type="text" name="message-name" placeholder="Your Name" required>
-             <input type="email" name="message-email" placeholder="Email Address" required>
-             <button type="submit">
-             <i class="fa fa-paper-plane" aria-hidden="true"></i>
-             </button>
-             </form>
+                {% csrf_token %}
+                <input type="text" name="message-name" placeholder="Ваше ім'я" required>
+                <input type="email" name="message-email" placeholder="Email" required>
+                <button type="submit" aria-label="Підписатися">
+                  <i class="fa fa-paper-plane" aria-hidden="true"></i>
+                </button>
+              </form>
             </div>
 
-            <!-- Social Info -->
-            <div class="footer-social-info">
-              <a href="#" data-toggle="tooltip" data-placement="top" title="Facebook"><i class="fa fa-facebook"></i></a>
-              <a href="#" data-toggle="tooltip" data-placement="top" title="Twitter"><i class="fa fa-twitter"></i></a>
-              <a href="#" data-toggle="tooltip" data-placement="top" title="Google Plus"><i class="fa fa-google-plus"></i></a>
-              <a href="#" data-toggle="tooltip" data-placement="top" title="Linkedin"><i class="fa fa-linkedin"></i></a>
-              <a href="#" data-toggle="tooltip" data-placement="top" title="Pinterest"><i class="fa fa-pinterest"></i></a>
-            </div>
-          </div>
-        </div>
+         <!-- Соцмережі
+         <div class="footer-social-info">
+          <a href="https://facebook.com/dento.lviv" data-toggle="tooltip" data-placement="bottom" title="Facebook"><i class="fa fa-facebook"></i></a>
+       </div>
+        -->
       </div>
-    </div>
-
-    <!-- Copywrite Area -->
+     </div>
     <div class="container">
       <div class="row">
         <div class="col-12">
           <div class="copywrite-content">
-            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+            <p>
+              Copyright &copy;<script>document.write(new Date().getFullYear());</script> Dento. Усі права захищено.
+            </p>
           </div>
         </div>
       </div>
     </div>
   </footer>
-  <!-- ***** Footer Area End ***** -->
 
-  <!-- ******* All JS ******* -->
-  <!-- jQuery js -->
   <script src="{% static 'website/js/jquery.min.js' %}"></script>
-  <!-- Popper js -->
   <script src="{% static 'website/js/popper.min.js' %}"></script>
-  <!-- Bootstrap js -->
   <script src="{% static 'website/js/bootstrap.min.js' %}"></script>
-  <!-- All js -->
   <script src="{% static 'website/js/dento.bundle.js' %}"></script>
-  <!-- Active js -->
-  <script src="{% static 'website/js/default-assets/active.js' %}">
-      <script>
-document.addEventListener('DOMContentLoaded', function() {
+  <script src="{% static 'website/js/default-assets/active.js' %}"></script>
 
-  // CTA кнопка
-  document.querySelectorAll('.booking-btn').forEach(function(el) {
-    el.addEventListener('click', function() {
-      gtag('event', 'cta_click', {
-        button_text: 'booking_now'
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+
+      document.querySelectorAll('.booking-btn').forEach(function(el) {
+        el.addEventListener('click', function() {
+          if (typeof gtag === 'function') {
+            gtag('event', 'cta_click', { button_text: 'booking_now' });
+          }
+        });
       });
-    });
-  });
 
-  // Телефон
-  document.querySelectorAll('a[href^="tel:"]').forEach(function(el) {
-    el.addEventListener('click', function() {
-      gtag('event', 'phone_click', {
-        phone_number: this.getAttribute('href')
+      document.querySelectorAll('a[href^="tel:"]').forEach(function(el) {
+        el.addEventListener('click', function() {
+          if (typeof gtag === 'function') {
+            gtag('event', 'phone_click', { phone_number: this.getAttribute('href') });
+          }
+        });
       });
-    });
-  });
 
-  // Форма
-  document.querySelectorAll('form').forEach(function(el) {
-    el.addEventListener('submit', function() {
-      gtag('event', 'form_submit', {
-        form_name: 'contact_form'
+      document.querySelectorAll('form').forEach(function(el) {
+        el.addEventListener('submit', function() {
+          if (typeof gtag === 'function') {
+            gtag('event', 'form_submit', { form_name: 'contact_form' });
+          }
+        });
       });
-    });
-  });
 
-  // Соцмережі
-  document.querySelectorAll('.social-link').forEach(function(el) {
-    el.addEventListener('click', function() {
-      gtag('event', 'social_click', {
-        platform: this.innerText.trim()
+      document.querySelectorAll('.social-link').forEach(function(el) {
+        el.addEventListener('click', function() {
+          if (typeof gtag === 'function') {
+            gtag('event', 'social_click', { platform: this.innerText.trim() });
+          }
+        });
       });
-    });
-  });
 
-  // Меню
-  document.querySelectorAll('nav a').forEach(function(el) {
-    el.addEventListener('click', function() {
-      gtag('event', 'menu_click', {
-        menu_item: this.innerText.trim()
+      document.querySelectorAll('nav a').forEach(function(el) {
+        el.addEventListener('click', function() {
+          if (typeof gtag === 'function') {
+            gtag('event', 'menu_click', { menu_item: this.innerText.trim() });
+          }
+        });
       });
-    });
-  });
 
-});
-</script>
+    });
   </script>
 
 </body>

@@ -1,188 +1,407 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block title %}Dental Pricing & Plans | Affordable Dental Care | Dento {%endblock %}
-{% block meta_description %}Check our transparent dental pricing and treatment plans. Quality care at fair prices with flexible options. Schedule your consultation today!{% endblock %}
+{% block title %}Ціни на стоматологічні послуги | Доступне лікування | Dento{% endblock %}
+{% block meta_description %}Ознайомтеся з прозорими цінами на стоматологічні послуги та планами лікування. Якісна допомога за справедливою ціною. Запишіться на консультацію вже сьогодні!{% endblock %}
 
 {% block content %}
 
+<style>
+/* === Цінник: сучасний редизайн === */
+.pricing-hero-text {
+    max-width: 760px;
+    margin: 0 auto 60px;
+    text-align: center;
+    color: #4a5568;
+    font-size: 17px;
+    line-height: 1.8;
+}
+.pricing-hero-text a {
+    color: #00bcd4;
+    font-weight: 600;
+    border-bottom: 1px solid transparent;
+    transition: border-color .2s;
+}
+.pricing-hero-text a:hover { border-color: #00bcd4; text-decoration: none; }
 
+.price-category {
+    margin-bottom: 60px;
+}
+.price-category-header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 28px;
+    padding-bottom: 18px;
+    border-bottom: 2px solid #eef5fa;
+}
+.price-category-icon {
+    width: 56px; height: 56px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #00bcd4 0%, #0a8fa3 100%);
+    color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 24px;
+    box-shadow: 0 8px 20px rgba(0,188,212,0.25);
+    flex-shrink: 0;
+}
+.price-category-header h2 {
+    margin: 0;
+    font-size: 26px;
+    color: #0d3859;
+    font-weight: 700;
+}
+.price-category-header p {
+    margin: 4px 0 0;
+    color: #718096;
+    font-size: 15px;
+}
 
-  <!-- ***** Breadcrumb Area Start ***** -->
-  <div class="breadcumb-area bg-img bg-gradient-overlay" style="background-image: url({% static 'website/img/bg-img/12.jpg' %});">
-    <div class="container h-100">
-      <div class="row h-100 align-items-center">
-        <div class="col-12">
-          <h1 class="title">Dental Pricing & Treatment Plans</h1>
-        </div>
+.price-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 18px;
+}
+
+.price-card {
+    background: #fff;
+    border: 1px solid #eef5fa;
+    border-radius: 14px;
+    padding: 22px 24px;
+    transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 140px;
+}
+.price-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 30px rgba(13, 56, 89, 0.08);
+    border-color: #cfeef4;
+}
+
+.price-card.popular {
+    border: 2px solid #00bcd4;
+    background: linear-gradient(180deg, #f6fdff 0%, #ffffff 100%);
+}
+
+.popular-badge {
+    position: absolute;
+    top: -11px;
+    right: 18px;
+    background: linear-gradient(90deg, #00bcd4, #0a8fa3);
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    padding: 5px 12px;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 188, 212, 0.3);
+}
+
+.price-card-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a3753;
+    line-height: 1.45;
+    margin-bottom: 14px;
+}
+
+.price-card-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding-top: 14px;
+    border-top: 1px dashed #dde8f0;
+}
+.price-card-stage {
+    color: #718096;
+    font-size: 13px;
+    background: #f4f8fb;
+    padding: 4px 10px;
+    border-radius: 6px;
+}
+.price-card-amount {
+    font-size: 22px;
+    font-weight: 700;
+    color: #0d3859;
+    white-space: nowrap;
+}
+.price-card-amount .currency {
+    color: #00bcd4;
+    margin-right: 2px;
+}
+
+/* Підсумковий заклик */
+.pricing-cta {
+    margin-top: 70px;
+    padding: 50px 30px;
+    background: linear-gradient(135deg, #f0f9ff 0%, #e6f4fa 100%);
+    border-radius: 18px;
+    text-align: center;
+    border: 1px solid #d2e9f7;
+}
+.pricing-cta h3 {
+    color: #0d3859;
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+.pricing-cta p {
+    color: #4a5568;
+    font-size: 16px;
+    max-width: 580px;
+    margin: 0 auto 24px;
+}
+.pricing-cta .btn-pair {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.pricing-cta .btn { min-width: 170px; }
+.pricing-cta .btn-secondary-link {
+    background: transparent;
+    border: 2px solid #0d3859;
+    color: #0d3859;
+}
+.pricing-cta .btn-secondary-link:hover {
+    background: #0d3859;
+    color: #fff;
+}
+
+.pricing-note {
+    text-align: center;
+    margin-top: 35px;
+    font-size: 14px;
+    color: #889aa8;
+    font-style: italic;
+}
+
+@media (max-width: 575px) {
+    .price-card-meta { flex-wrap: wrap; }
+    .price-category-header h2 { font-size: 22px; }
+}
+</style>
+
+<!-- ***** Початок зони «Хлібні крихти» ***** -->
+<div class="breadcumb-area bg-img bg-gradient-overlay" style="background-image: url({% static 'website/img/bg-img/12.jpg' %});">
+  <div class="container h-100">
+    <div class="row h-100 align-items-center">
+      <div class="col-12">
+        <h1 class="title">Ціни та плани лікування</h1>
       </div>
     </div>
   </div>
-  <div class="breadcumb--con">
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="#"><i class="fa fa-home"></i> Home</a></li>
-              <li class="breadcrumb-item active" aria-current="page">Our Pricing</li>
-            </ol>
-          </nav>
-        </div>
+</div>
+<div class="breadcumb--con">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#"><i class="fa fa-home"></i> Головна</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Наші ціни</li>
+          </ol>
+        </nav>
       </div>
     </div>
   </div>
-  <!-- ***** Breadcrumb Area End ***** -->
+</div>
+<!-- ***** Кінець зони «Хлібні крихти» ***** -->
 
-  <!-- ***** Dento Pricing Table Area Start ***** -->
-  <section class="dento-pricing-table-area mt-50 section-padding-0-100">
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-            <p>
-      Our dental pricing is transparent and designed to fit different needs.
-      Learn more about our
-      <a href="{% url 'service' %}">dental services</a>,
-      meet our
-      <a href="{% url 'about' %}">experienced dental team</a>,
-      or <a href="{% url 'contact' %}">book a consultation</a>
-      to receive a personalized treatment plan.
+<!-- ***** Початок секції з цінами ***** -->
+<section class="dento-pricing-table-area mt-50 section-padding-0-100">
+  <div class="container">
+
+    <p class="pricing-hero-text">
+      Наш прайс прозорий і розрахований на пацієнтів з різними потребами. Дізнайтеся більше про
+      <a href="{% url 'service' %}">наші стоматологічні послуги</a>,
+      познайомтеся з <a href="{% url 'about' %}">досвідченою командою лікарів</a>
+      або <a href="{% url 'contact' %}">запишіться на консультацію</a> —
+      і ми складемо для вас індивідуальний план лікування.
     </p>
-          <div class="dento-price-table table-responsive">
-            <table class="table table-borderless mb-0">
-              <thead>
-                <tr>
-                  <th scope="col">Service Names</th>
-                  <th scope="col">Stage</th>
-                  <th scope="col">Price</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">Teeth Whitening Service at home</th>
-                  <td>1 times</td>
-                  <td>$115.00</td>
-                </tr>
-                <tr>
-                  <th scope="row">Teeth Whitening Service at Dental Clinic</th>
-                  <td>1 times</td>
-                  <td>$100.00</td>
-                </tr>
-                <tr>
-                  <th scope="row">Ceramic crowns and fillings Dental porcelain</th>
-                  <td>1 times</td>
-                  <td>$99.00</td>
-                </tr>
-                <tr>
-                  <th scope="row">Remove crowns, bridges Service</th>
-                  <td>1 tooth</td>
-                  <td>$50.00</td>
-                </tr>
-                <tr>
-                  <th scope="row">Covering the recession of the gums</th>
-                  <td>1 times</td>
-                  <td>$400.00</td>
-                </tr>
-                <tr>
-                  <th scope="row">Consultation, impressions and preparation of models</th>
-                  <td>1 times</td>
-                  <td>$35.00</td>
-                </tr>
-                <tr>
-                  <th scope="row">Removal of an old inlay, old crown</th>
-                  <td>1 times</td>
-                  <td>$99.00</td>
-                </tr>
-                <tr>
-                  <th scope="row">Overlay teeth whitening ( 2 arches)</th>
-                  <td>1 times</td>
-                  <td>$170.00</td>
-                </tr>
-                <tr>
-                  <th scope="row">Standard porcelain and zirconium crown on implant</th>
-                  <td>1 tooth</td>
-                  <td>$499.00</td>
-                </tr>
-                <tr>
-                  <th scope="row">Implantation of an implant (price depends on system used)</th>
-                  <td>1 tooth</td>
-                  <td>$600.00</td>
-                </tr>
-                <tr>
-                  <th scope="row">Covering the recession of the gums</th>
-                  <td>1 times</td>
-                  <td>$400.00</td>
-                </tr>
-                <tr>
-                  <th scope="row">Consultation, impressions and preparation of models</th>
-                  <td>1 times</td>
-                  <td>$35.00</td>
-                </tr>
-                <tr>
-                  <th scope="row">Removal of an old inlay, old crown</th>
-                  <td>1 times</td>
-                  <td>$99.00</td>
-                </tr>
-                <tr>
-                  <th scope="row">Overlay teeth whitening ( 2 arches)</th>
-                  <td>1 times</td>
-                  <td>$170.00</td>
-                </tr>
-                <tr>
-                  <th scope="row">Standard porcelain and zirconium crown on implant</th>
-                  <td>1 tooth</td>
-                  <td>$499.00</td>
-                </tr>
-                <tr>
-                  <th scope="row">Implantation of an implant (price depends on system used)</th>
-                  <td>1 tooth</td>
-                  <td>$600.00</td>
-                </tr>
-                <tr>
-                  <th scope="row">Covering the recession of the gums</th>
-                  <td>1 times</td>
-                  <td>$400.00</td>
-                </tr>
-                <tr>
-                  <th scope="row">Consultation, impressions and preparation of models</th>
-                  <td>1 times</td>
-                  <td>$35.00</td>
-                </tr>
-                <tr>
-                  <th scope="row">Removal of an old inlay, old crown</th>
-                  <td>1 times</td>
-                  <td>$99.00</td>
-                </tr>
-                <tr>
-                  <th scope="row">Overlay teeth whitening ( 2 arches)</th>
-                  <td>1 times</td>
-                  <td>$170.00</td>
-                </tr>
-                <tr>
-                  <th scope="row">Standard porcelain and zirconium crown on implant</th>
-                  <td>1 tooth</td>
-                  <td>$499.00</td>
-                </tr>
-                <tr>
-                  <th scope="row">Implantation of an implant (price depends on system used)</th>
-                  <td>1 tooth</td>
-                  <td>$600.00</td>
-                </tr>
-              </tbody>
-            </table>
+
+    <!-- ====== Категорія: Естетика ====== -->
+    <div class="price-category">
+      <div class="price-category-header">
+        <div class="price-category-icon"><i class="fa fa-star"></i></div>
+        <div>
+          <h2>Естетична стоматологія</h2>
+          <p>Відбілювання та реставрація для бездоганної усмішки</p>
+        </div>
+      </div>
+
+      <div class="price-grid">
+        <div class="price-card popular">
+          <span class="popular-badge">Популярне</span>
+          <div class="price-card-title">Відбілювання зубів у клініці</div>
+          <div class="price-card-meta">
+            <span class="price-card-stage">1 курс</span>
+            <span class="price-card-amount">  4 000<span class="currency"> грн</span></span>
           </div>
         </div>
 
-        <div class="col-12">
-          <div class="more-btn text-center mt-50">
-            <a href="#" class="btn dento-btn">Read More <i class="fa fa-angle-double-right"></i></a>
+        <div class="price-card">
+          <div class="price-card-title">Відбілювання зубів удома</div>
+          <div class="price-card-meta">
+            <span class="price-card-stage">1 курс</span>
+            <span class="price-card-amount"> 4 600<span class="currency"> грн</span></span>
+          </div>
+        </div>
+
+        <div class="price-card">
+          <div class="price-card-title">Капи для відбілювання (2 щелепи)</div>
+          <div class="price-card-meta">
+            <span class="price-card-stage">1 комплект</span>
+            <span class="price-card-amount"> 6 800 <span class="currency"> грн</span></span>
           </div>
         </div>
       </div>
     </div>
-  </section>
-  <!-- ***** Dento Pricing Table Area End ***** -->
 
+    <!-- ====== Категорія: Терапія та реставрація ====== -->
+    <div class="price-category">
+      <div class="price-category-header">
+        <div class="price-category-icon"><i class="fa fa-medkit"></i></div>
+        <div>
+          <h2>Терапія та реставрація</h2>
+          <p>Лікування зубів, пломбування, заміна старих реставрацій</p>
+        </div>
+      </div>
 
+      <div class="price-grid">
+        <div class="price-card popular">
+          <span class="popular-badge">Популярне</span>
+          <div class="price-card-title">Керамічні коронки та пломби з порцеляни</div>
+          <div class="price-card-meta">
+            <span class="price-card-stage">1 одиниця</span>
+            <span class="price-card-amount"> 4 000<span class="currency"> грн</span></span>
+          </div>
+        </div>
 
+        <div class="price-card">
+          <div class="price-card-title">Зняття коронок та мостоподібних протезів</div>
+          <div class="price-card-meta">
+            <span class="price-card-stage">1 зуб</span>
+            <span class="price-card-amount"> 2 000<span class="currency"> грн</span></span>
+          </div>
+        </div>
+
+        <div class="price-card">
+          <div class="price-card-title">Зняття старої вкладки або коронки</div>
+          <div class="price-card-meta">
+            <span class="price-card-stage">1 одиниця</span>
+            <span class="price-card-amount"> 4 000<span class="currency"> грн</span></span>
+          </div>
+        </div>
+
+        <div class="price-card">
+          <div class="price-card-title">Закриття рецесії ясен</div>
+          <div class="price-card-meta">
+            <span class="price-card-stage">1 процедура</span>
+            <span class="price-card-amount"> 16 000<span class="currency"> грн</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ====== Категорія: Імплантація та протезування ====== -->
+    <div class="price-category">
+      <div class="price-category-header">
+        <div class="price-category-icon"><i class="fa fa-tooth" aria-hidden="true">🦷</i></div>
+        <div>
+          <h2>Імплантація та протезування</h2>
+          <p>Сучасні рішення для відновлення втрачених зубів</p>
+        </div>
+      </div>
+
+      <div class="price-grid">
+        <div class="price-card popular">
+          <span class="popular-badge">Топ вибір</span>
+          <div class="price-card-title">Встановлення імпланта</div>
+          <div class="price-card-meta">
+            <span class="price-card-stage">1 зуб · від</span>
+            <span class="price-card-amount"> 24 000<span class="currency"> грн</span></span>
+          </div>
+        </div>
+
+        <div class="price-card">
+          <div class="price-card-title">Порцелянова та цирконієва коронка на імплант</div>
+          <div class="price-card-meta">
+            <span class="price-card-stage">1 зуб</span>
+            <span class="price-card-amount"> 20 000<span class="currency"> грн</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ====== Категорія: Консультація ====== -->
+    <div class="price-category">
+      <div class="price-category-header">
+        <div class="price-category-icon"><i class="fa fa-comments-o"></i></div>
+        <div>
+          <h2>Консультація та діагностика</h2>
+          <p>Перший крок до правильного плану лікування</p>
+        </div>
+      </div>
+
+      <div class="price-grid">
+        <div class="price-card popular">
+          <span class="popular-badge">Популярне</span>
+          <div class="price-card-title">Первинна консультація стоматолога</div>
+          <div class="price-card-meta">
+            <span class="price-card-stage">1 консультація</span>
+            <span class="price-card-amount">500<span class="currency"> грн</span></span>
+          </div>
+        </div>
+
+        <div class="price-card">
+          <div class="price-card-title">Консультація, зняття зліпків та виготовлення моделей</div>
+          <div class="price-card-meta">
+            <span class="price-card-stage">1 процедура</span>
+            <span class="price-card-amount">1 500<span class="currency"> грн</span></span>
+          </div>
+        </div>
+
+        <div class="price-card">
+          <div class="price-card-title">Панорамний знімок щелепи (ОПТГ)</div>
+          <div class="price-card-meta">
+            <span class="price-card-stage">1 знімок</span>
+            <span class="price-card-amount">800<span class="currency"> грн</span></span>
+          </div>
+        </div>
+
+        <div class="price-card">
+          <div class="price-card-title">Прицільний знімок одного зуба</div>
+          <div class="price-card-meta">
+            <span class="price-card-stage">1 знімок</span>
+            <span class="price-card-amount">200<span class="currency"> грн</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ====== Заклик до дії ====== -->
+    <div class="pricing-cta">
+      <h3>Не знайшли потрібну послугу?</h3>
+      <p>
+        Це лише орієнтовні ціни на основні послуги. Точну вартість лікування ми визначимо після
+        огляду — і вона залежить від стану зубів, обраних матеріалів та обсягу робіт.
+      </p>
+      <div class="btn-pair">
+        <a href="{% url 'contact' %}" class="btn dento-btn">Записатися на огляд</a>
+        <a href="{% url 'service' %}" class="btn dento-btn btn-secondary-link">Усі послуги</a>
+      </div>
+    </div>
+
+    <p class="pricing-note">
+      * Усі ціни вказані в гривнях. Можлива оплата частинами та індивідуальні плани лікування.
+    </p>
+
+  </div>
+</section>
+<!-- ***** Кінець секції з цінами ***** -->
 
 {% endblock %}

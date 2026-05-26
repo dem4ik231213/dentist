@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block content %}
+<div style="background: linear-gradient(135deg, #f5f7fa 0%, #e4ecf7 100%); padding: 80px 20px; min-height: 100vh; display: flex; align-items: center; justify-content: center;">
+  <div class="container" style="max-width: 420px; margin: 0 auto; padding: 30px 28px; background: #fff; border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,0.08);">
+    <div style="text-align: center; margin-bottom: 22px;">
+      <h2 style="margin: 0; color: #2c3e50; font-size: 24px;">Вхід в кабінет</h2>
+      <p style="color: #6c757d; margin: 6px 0 0 0; font-size: 13px;">Увійдіть, щоб переглянути свої записи</p>
+    </div>
+
+    {% if messages %}
+        {% for message in messages %}
+            {% if message|stringformat:"s" == "unverified" %}
+                <div style="padding: 13px; margin-bottom: 18px; border-radius: 8px; background: #fff3cd; color: #856404; border: 1px solid #ffeaa7;">
+                    <strong>⚠️ Email не підтверджено</strong>
+                    <p style="margin: 6px 0 10px 0; font-size: 13px;">Перевірте папку "Вхідні" або "Спам" у вашій пошті.</p>
+                    <a href="{% url 'resend_verification' %}" style="display: inline-block; padding: 7px 14px; background: #007bff; color: white; text-decoration: none; border-radius: 4px; font-size: 13px;">Надіслати лист повторно</a>
+                </div>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+
+    <form method="post">
+        {% csrf_token %}
+        {% for field in form %}
+            <div class="form-group" style="margin-bottom: 14px;">
+                <label style="display: block; margin-bottom: 4px; font-weight: 500; color: #495057; font-size: 14px;">{{ field.label }}</label>
+                {{ field }}
+                {% if field.errors %}
+                    <div style="color: #dc3545; font-size: 13px; margin-top: 4px;">{{ field.errors }}</div>
+                {% endif %}
+            </div>
+        {% endfor %}
+        <button type="submit" style="width: 100%; padding: 11px; background: #007bff; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 15px; font-weight: 500; box-shadow: 0 4px 12px rgba(0,123,255,0.25); margin-top: 6px;">Увійти</button>
+    </form>
+
+    <div style="margin-top: 20px; padding-top: 16px; border-top: 1px solid #e9ecef; text-align: center;">
+      <p style="margin: 0 0 8px 0;">
+          <a href="{% url 'password_reset' %}" style="color: #6c757d; font-size: 13px;">Забули пароль?</a>
+      </p>
+      <p style="margin: 0; color: #6c757d; font-size: 13px;">
+          Немає акаунту? <a href="{% url 'register' %}" style="color: #007bff; font-weight: 500;">Зареєструватись</a>
+      </p>
+    </div>
+  </div>
+</div>
+
+<style>
+    input[type="text"], input[type="password"] {
+        width: 100%;
+        padding: 9px 12px;
+        border: 1px solid #ced4da;
+        border-radius: 8px;
+        font-size: 14px;
+        box-sizing: border-box;
+        transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    input:focus {
+        outline: none;
+        border-color: #007bff;
+        box-shadow: 0 0 0 3px rgba(0,123,255,0.1);
+    }
+</style>
+{% endblock %}

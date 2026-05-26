@@ -5,24 +5,6 @@ class Doctor(models.Model):
     name = models.CharField(max_length=100)
     speciality = models.CharField(max_length=120)
 
-    STATUS_CHOICES = (
-        ('Available', 'Available'),
-        ('Busy', 'Busy'),
-        ('On Vacation', 'On Vacation'),
-    )
-
-    status = models.CharField(
-        max_length=20,
-        choices=STATUS_CHOICES,
-        default='Available'
-    )
-
-    busy_until = models.DateTimeField(null=True, blank=True)
-
-    def __str__(self):
-        return self.name
-
-
 class Appointment(models.Model):
     name = models.CharField(max_length=100)
     phone = models.CharField(max_length=50)
@@ -40,29 +22,29 @@ class Appointment(models.Model):
 
 
 class ConsultationRequest(models.Model):
-      
+
       STATUS_CHOICES = (
         ("new", "New"),
         ("in_progress", "In Progress"),
         ("contacted", "Contacted"),
         ("done", "Done"),
     )
-    
-    
+
+
       name = models.CharField(max_length=100, blank=True, null=True)
       email = models.EmailField()
       phone = models.CharField(max_length=50, blank=True)
       message = models.TextField(blank=True)
       created = models.DateTimeField(auto_now_add=True)
-    
+
       status = models.CharField(
         max_length=20,
         choices=STATUS_CHOICES,
         default="new"
      )
-      
+
 class ContactMessage(models.Model):
-    
+
       STATUS_CHOICES = (
         ("new", "New"),
         ("in_progress", "In Progress"),
@@ -72,7 +54,7 @@ class ContactMessage(models.Model):
       email = models.EmailField()
       message = models.TextField()
       created = models.DateTimeField(auto_now_add=True)
-      
+
       status = models.CharField(
         max_length=20,
         choices=STATUS_CHOICES,

@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container" style="max-width: 900px; margin: 60px auto; padding: 30px;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
+        <h2>Особистий кабінет</h2>
+        <a href="{% url 'logout' %}" style="padding: 8px 16px; background: #dc3545; color: white; text-decoration: none; border-radius: 4px;">Вийти</a>
+    </div>
+
+    <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin-bottom: 30px;">
+        <p style="margin: 0;"><strong>Вітаємо, {{ user.first_name }} {{ user.last_name }}!</strong></p>
+        <p style="margin: 5px 0 0 0; color: #6c757d;">Email: {{ user.email }}</p>
+    </div>
+
+    {% if messages %}
+        {% for message in messages %}
+            <div style="padding: 10px; margin-bottom: 15px; border-radius: 4px; background: #d4edda; color: #155724;">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+
+    <h3>Мої записи на прийом</h3>
+    {% if appointments %}
+        <table style="width: 100%; border-collapse: collapse; margin-top: 15px;">
+            <thead>
+                <tr style="background: #007bff; color: white;">
+                    <th style="padding: 12px; text-align: left;">Дата</th>
+                    <th style="padding: 12px; text-align: left;">Час</th>
+                    <th style="padding: 12px; text-align: left;">Адреса</th>
+                    <th style="padding: 12px; text-align: left;">Повідомлення</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for a in appointments %}
+                    <tr style="border-bottom: 1px solid #dee2e6;">
+                        <td style="padding: 12px;">{{ a.date }}</td>
+                        <td style="padding: 12px;">{{ a.schedule }}</td>
+                        <td style="padding: 12px;">{{ a.address }}</td>
+                        <td style="padding: 12px;">{{ a.message|truncatechars:50 }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <div style="padding: 30px; text-align: center; background: #f8f9fa; border-radius: 8px;">
+            <p>У вас ще немає записів на прийом.</p>
+            <a href="{% url 'appointment' %}" style="display: inline-block; margin-top: 10px; padding: 10px 20px; background: #007bff; color: white; text-decoration: none; border-radius: 4px;">Записатись на прийом</a>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

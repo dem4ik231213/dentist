@@ -1533,4 +1533,19 @@ ul {
     height: 110px;
     padding: 15px; }
 
+    /* Однаковий розмір карток стоматологів */
+.single-dentist-area picture,
+.single-dentist-area > picture {
+  display: block;
+  width: 100%;
+  overflow: hidden; }
+
+.single-dentist-area picture img,
+.single-dentist-area > img {
+  width: 100% !important;
+  height: 470px !important;
+  object-fit: cover !important;
+  object-position: center 20% !important;
+  display: block; }
+
 /*# sourceMappingURL=style.css.map */
