@@ -81,8 +81,7 @@ def appointment(request):
         your_date = request.POST['your-date']
         your_message = request.POST['your-message']
 
-        # ЗБЕРЕЖЕННЯ В БАЗУ ДАНИХ
-        Appointment.objects.create(
+        appointment = Appointment.objects.create(
             name=your_name,
             phone=your_phone,
             email=your_email,
@@ -91,6 +90,13 @@ def appointment(request):
             date=your_date,
             message=your_message
         )
+
+        # СПОВІЩЕННЯ В TELEGRAM
+        try:
+            from website.telegram_notify import notify_admin_new_appointment
+            notify_admin_new_appointment(appointment)
+        except Exception as e:
+            print(f"Помилка відправки Telegram: {e}")
         return render(request, 'appointment.html', {
             'your_name': your_name,
             'your_phone': your_phone,
