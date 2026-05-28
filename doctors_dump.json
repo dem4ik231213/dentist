@@ -1,0 +1,26 @@
+[
+{
+  "model": "website.doctor",
+  "pk": 1,
+  "fields": {
+    "name": "Ірина Шевченко",
+    "speciality": "Дитячий стоматолог"
+  }
+},
+{
+  "model": "website.doctor",
+  "pk": 2,
+  "fields": {
+    "name": "Олександр Мельник",
+    "speciality": "Стоматолог-терапевт, головний лікар"
+  }
+},
+{
+  "model": "website.doctor",
+  "pk": 4,
+  "fields": {
+    "name": "Андрій Коваленко",
+    "speciality": "Стоматолог-ортодонт"
+  }
+}
+]

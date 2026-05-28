@@ -1,0 +1,345 @@
+[
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$qgQJR6U5A97OWBntKqtXdo$Z4kx7/2MOoJKvnuLj9y4yNiDiBPLb4PT5yJOuRZxfEA=",
+    "last_login": "2026-05-21T17:18:53.930Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "admin@gmail.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2025-12-30T13:34:29.576Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$qSg9pG7eEd2NrXp3fqzPtu$It9xIxIzg9oh4KRWCIpEvbRFuNjvwQ5GAk5mFSXyeG8=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "testuser",
+    "first_name": "",
+    "last_name": "",
+    "email": "test@test.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-05-11T15:24:29.580Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 3,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$eSX4j0MdEQDPB0ZwLwFB2C$si215EEi6D7nydErDXCzEeybhqo8pNaQXyhdJeFG5es=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "testuser6",
+    "first_name": "",
+    "last_name": "",
+    "email": "test@test.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-05-11T15:24:42.711Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 4,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$gi23IUq04YxvWiVk8SJoey$3GclxQxVo6MQ2iUgIXUNaGs1f/Jw+KOHeHY3gmP5UDo=",
+    "last_login": "2026-05-26T14:16:22.992Z",
+    "is_superuser": false,
+    "username": "doctor1",
+    "first_name": "Іван",
+    "last_name": "Петренко",
+    "email": "doctor@clinic.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-05-11T16:00:17.477Z",
+    "groups": [
+      2
+    ],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 5,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$HVECsLpmw3qNJM1OrjKqnm$Cc0tVsQcOY6hyRRzK7dzdLzJYinBbSvkKlEAyFp8NCE=",
+    "last_login": "2026-05-11T16:35:23.245Z",
+    "is_superuser": false,
+    "username": "patient1",
+    "first_name": "Тарас",
+    "last_name": "Полюхович",
+    "email": "patient@test.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-05-11T16:35:20.890Z",
+    "groups": [
+      1
+    ],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 6,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$FpHwVWECZr6ys6pjWhFiGE$sII7Z54crNKAoQ+/+7EcFJSqXJws8jYFTONd2f7Drn0=",
+    "last_login": "2026-05-12T13:47:18.793Z",
+    "is_superuser": false,
+    "username": "Gena",
+    "first_name": "Генадій",
+    "last_name": "Гринь",
+    "email": "dento.noreply@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-05-12T12:27:44.926Z",
+    "groups": [
+      1
+    ],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 7,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$hB1bVuUFR92xa7OMYkTGQ9$kumttRkksUZj8ksvOpyTN5QLYbBegMcjV4s4XweJIgY=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "tim",
+    "first_name": "Dominik",
+    "last_name": "Tyloo",
+    "email": "tim5@gmail.com",
+    "is_staff": false,
+    "is_active": false,
+    "date_joined": "2026-05-15T09:13:45.561Z",
+    "groups": [
+      1
+    ],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 8,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$HE95rNo67TSxs2gitjFdjw$uI5b6SoZg1TrZFlya1KSIqjaKoKIFDowtkLd0sFwZpA=",
+    "last_login": "2026-05-26T14:12:49.619Z",
+    "is_superuser": false,
+    "username": "kovalenko",
+    "first_name": "Андрій",
+    "last_name": "Коваленко",
+    "email": "kovalenko@dento.com.ua",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-05-21T16:42:44.632Z",
+    "groups": [
+      2
+    ],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 9,
+  "fields": {
+    "password": "pbkdf2_sha256$870000$5WIvMQtQSmkHKh05vn0A4Z$hHuE21O39+e9j2ddIqkGFn68wVUX8AfUbNRoz8Sj/xg=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "shevchenko",
+    "first_name": "Ірина",
+    "last_name": "Шевченко",
+    "email": "shevchenko@dento.com.ua",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-05-21T16:42:45.275Z",
+    "groups": [
+      2
+    ],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 10,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$LLerUpoTcS1QVXtKlMXcPg$Uj/tu0czq8vjVenKRhbN5mAAmBhF2f2+E1jGeGVSUm8=",
+    "last_login": "2026-05-27T12:53:22.683Z",
+    "is_superuser": false,
+    "username": "melnyk",
+    "first_name": "Олександр",
+    "last_name": "Мельник",
+    "email": "melnyk@dento.com.ua",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-05-21T16:42:45.905Z",
+    "groups": [
+      4
+    ],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 11,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$E9eo3FXm3nfqKbNzLhSL2s$zdJUnXhQmUyyLWhfHRYX2Z2p40rBmhnbpnAm2EzunNg=",
+    "last_login": "2026-05-26T12:19:30.391Z",
+    "is_superuser": false,
+    "username": "reception",
+    "first_name": "Марія",
+    "last_name": "Адміністратор",
+    "email": "reception@dento.com.ua",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-05-21T16:42:46.535Z",
+    "groups": [
+      3
+    ],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.group",
+  "pk": 1,
+  "fields": {
+    "name": "Patients",
+    "permissions": []
+  }
+},
+{
+  "model": "auth.group",
+  "pk": 2,
+  "fields": {
+    "name": "Doctors",
+    "permissions": [
+      28,
+      32
+    ]
+  }
+},
+{
+  "model": "auth.group",
+  "pk": 3,
+  "fields": {
+    "name": "Receptionist",
+    "permissions": [
+      25,
+      26,
+      27,
+      28,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      32
+    ]
+  }
+},
+{
+  "model": "auth.group",
+  "pk": 4,
+  "fields": {
+    "name": "HeadDoctor",
+    "permissions": [
+      25,
+      26,
+      27,
+      28,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      29,
+      30,
+      32
+    ]
+  }
+},
+{
+  "model": "auth.user_groups",
+  "pk": 1,
+  "fields": {
+    "user": 4,
+    "group": 2
+  }
+},
+{
+  "model": "auth.user_groups",
+  "pk": 2,
+  "fields": {
+    "user": 5,
+    "group": 1
+  }
+},
+{
+  "model": "auth.user_groups",
+  "pk": 3,
+  "fields": {
+    "user": 6,
+    "group": 1
+  }
+},
+{
+  "model": "auth.user_groups",
+  "pk": 4,
+  "fields": {
+    "user": 7,
+    "group": 1
+  }
+},
+{
+  "model": "auth.user_groups",
+  "pk": 5,
+  "fields": {
+    "user": 8,
+    "group": 2
+  }
+},
+{
+  "model": "auth.user_groups",
+  "pk": 6,
+  "fields": {
+    "user": 9,
+    "group": 2
+  }
+},
+{
+  "model": "auth.user_groups",
+  "pk": 7,
+  "fields": {
+    "user": 10,
+    "group": 4
+  }
+},
+{
+  "model": "auth.user_groups",
+  "pk": 8,
+  "fields": {
+    "user": 11,
+    "group": 3
+  }
+}
+]
