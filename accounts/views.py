@@ -1,4 +1,5 @@
 from django.contrib.auth.models import User, Group
+from website.models import Doctor
 from django.contrib.auth import login, logout
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
@@ -247,7 +248,7 @@ def staff_dashboard(request):
             'total_appointments': appointments.count(),
             'total_consultations': consultations.count(),
             'total_messages': messages_list.count(),
-            'total_doctors': User.objects.filter(groups__name='Doctors').count(),
+            'total_doctors': Doctor.objects.count(),
         }
 
         return render(request, 'accounts/dashboard_head_doctor.html', {
