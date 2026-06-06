@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /appointment/confirm/
+Allow: /
+
+Sitemap: https://dentist-production-0f00.up.railway.app/sitemap.xml
