@@ -115,7 +115,7 @@ def send_verification_email(request, user):
     })
     plain_message = strip_tags(html_message)
 
-    response = resend.Emails.send({
+response = resend.Emails.send({
     "from": "onboarding@resend.dev",
     "to": [user.email],
     "subject": subject,
