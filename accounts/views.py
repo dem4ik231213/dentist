@@ -131,7 +131,7 @@ def register_view(request):
         if form.is_valid():
             user = form.save()
             try:
-                # send_verification_email(request, user)
+                send_verification_email(request, user)
                 messages.success(request,
                     f"Реєстрація успішна! Ми надіслали лист на {user.email}. "
                     "Перейдіть за посиланням у листі, щоб підтвердити свій email.")
