@@ -115,14 +115,14 @@ def send_verification_email(request, user):
     })
     plain_message = strip_tags(html_message)
 
-response = resend.Emails.send({
-    "from": "onboarding@resend.dev",
-    "to": [user.email],
-    "subject": subject,
-    "html": html_message,
-})
+    response = resend.Emails.send({
+        "from": "onboarding@resend.dev",
+        "to": [user.email],
+        "subject": subject,
+        "html": html_message,
+    })
 
-print("RESEND RESPONSE:", response)
+    print("RESEND RESPONSE:", response)
 
 def register_view(request):
     if request.user.is_authenticated:
