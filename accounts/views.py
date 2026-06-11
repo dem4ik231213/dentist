@@ -172,7 +172,7 @@ def resend_verification(request):
             messages.error(request, "Не знайдено непідтверджений акаунт з таким email")
         except Exception as e:
     print("EMAIL ERROR:", e)
-    raise
+    messages.error(request, f"Помилка: {e}")
         return redirect('login')
     return render(request, 'accounts/resend_verification.html')
 
