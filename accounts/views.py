@@ -170,8 +170,9 @@ def resend_verification(request):
             messages.success(request, f"Лист повторно надіслано на {email}")
         except User.DoesNotExist:
             messages.error(request, "Не знайдено непідтверджений акаунт з таким email")
-        except Exception:
-            messages.error(request, "Не вдалось надіслати лист")
+        except Exception as e:
+    print("EMAIL ERROR:", e)
+    raise
         return redirect('login')
     return render(request, 'accounts/resend_verification.html')
 
