@@ -11,3 +11,4 @@ whitenoise==5.0.1
 djangorestframework
 djangorestframework-simplejwt
 requests>=2.31.0
+resend
