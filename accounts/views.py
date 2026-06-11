@@ -121,7 +121,7 @@ def send_verification_email(request, user):
     "subject": subject,
     "html": html_message,
 })
-
+print("RESEND RESPONSE:", response)
 
 def register_view(request):
     if request.user.is_authenticated:
