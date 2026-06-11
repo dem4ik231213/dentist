@@ -150,6 +150,6 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'dento.noreply@gmail.com'  #  Gmail
 EMAIL_HOST_PASSWORD = 'cxgq hgbb hzlf ftvh'  # App Password
 DEFAULT_FROM_EMAIL = 'Dento Clinic <dento.noreply@gmail.com>'  # ← теж свій email
-
+RESEND_API_KEY = os.environ.get("RESEND_API_KEY")
 # Як довго діє токен для скидання пароля (в секундах) — 1 година
 PASSWORD_RESET_TIMEOUT = 60 * 60
