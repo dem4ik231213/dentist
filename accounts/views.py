@@ -104,7 +104,7 @@ def send_verification_email(request, user):
 
     token = default_token_generator.make_token(user)
     uid = urlsafe_base64_encode(force_bytes(user.pk))
-    verify_url = request.build_absolute_uri(f'/accounts/verify-email/{uid}/{token}/')
+    verify_url = f"https://dentist-production-0f00.up.railway.app/accounts/verify-email/{uid}/{token}/"
 
     subject = "🦷 Підтвердження email — Стоматологія Dento"
     html_message = render_to_string('accounts/verification_email.html', {
