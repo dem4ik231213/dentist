@@ -12,6 +12,7 @@ from django.utils.encoding import force_bytes, force_str
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.conf import settings
 from django import forms
+import resend
 
 
 # ============================================================
@@ -101,6 +102,7 @@ class PatientRegisterForm(UserCreationForm):
 
 def send_verification_email(request, user):
     from django.utils.html import strip_tags
+    resend.api_key = settings.RESEND_API_KEY
 
     token = default_token_generator.make_token(user)
     uid = urlsafe_base64_encode(force_bytes(user.pk))
@@ -113,14 +115,12 @@ def send_verification_email(request, user):
     })
     plain_message = strip_tags(html_message)
 
-    send_mail(
-        subject,
-        plain_message,
-        settings.DEFAULT_FROM_EMAIL,
-        [user.email],
-        html_message=html_message,
-        fail_silently=False,
-    )
+    resend.Emails.send({
+    "from": "onboarding@resend.dev",
+    "to": [user.email],
+    "subject": subject,
+    "html": html_message,
+})
 
 
 def register_view(request):
