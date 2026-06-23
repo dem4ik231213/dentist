@@ -473,7 +473,17 @@
                 </div>
                 <div class="col-md-6">
                   <div class="form-group mb-30">
-                    <input type="text" name="your-phone" class="form-control" placeholder="Ваш телефон" required>
+                    <input type="tel"
+                           name="your-phone"
+                           class="form-control"
+                           placeholder="+380XXXXXXXXX"
+                           pattern="^\+?\d{10,13}$"
+                           inputmode="numeric"
+                           maxlength="13"
+                           minlength="10"
+                           oninput="this.value = this.value.replace(/[^\d+]/g, '').replace(/(?!^)\+/g, '')"
+                           title="Введіть номер телефону (10–13 цифр, можна з '+')"
+                           required>
                   </div>
                 </div>
                 <div class="col-md-6">
