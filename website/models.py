@@ -29,18 +29,17 @@ class ConsultationRequest(models.Model):
         ("contacted", "Contacted"),
         ("done", "Done"),
     )
-
-
       name = models.CharField(max_length=100, blank=True, null=True)
-      email = models.EmailField()
+      email = models.EmailField(db_index=True)
       phone = models.CharField(max_length=50, blank=True)
       message = models.TextField(blank=True)
-      created = models.DateTimeField(auto_now_add=True)
+      created = models.DateTimeField(auto_now_add=True, db_index=True)
 
       status = models.CharField(
         max_length=20,
         choices=STATUS_CHOICES,
         default="new"
+        db_index=True  
      )
 
 class ContactMessage(models.Model):
@@ -51,14 +50,15 @@ class ContactMessage(models.Model):
         ("done", "Done"),
     )
       name = models.CharField(max_length=100)
-      email = models.EmailField()
+      email = models.EmailField(db_index=True)
       message = models.TextField()
-      created = models.DateTimeField(auto_now_add=True)
+      created = models.DateTimeField(auto_now_add=True, db_index=True)
 
       status = models.CharField(
         max_length=20,
         choices=STATUS_CHOICES,
         default="new"
+        db_index=True                                  
      )
 
       def __str__(self):
