@@ -38,7 +38,7 @@ class ConsultationRequest(models.Model):
       status = models.CharField(
         max_length=20,
         choices=STATUS_CHOICES,
-        default="new"
+        default="new",
         db_index=True  
      )
 
@@ -57,7 +57,7 @@ class ContactMessage(models.Model):
       status = models.CharField(
         max_length=20,
         choices=STATUS_CHOICES,
-        default="new"
+        default="new",
         db_index=True                                  
      )
 
