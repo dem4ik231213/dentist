@@ -241,7 +241,7 @@ def staff_dashboard(request):
 
     # ============ ГОЛОВНИЙ ЛІКАР або SUPERUSER ============
     if role in ('head_doctor', 'superuser'):
-        appointments = Appointment.objects.all().order_by('-date')
+        appointments = Appointment.objects.select_related('doctor').all().order_by('-date')
         consultations = ConsultationRequest.objects.all().order_by('-id')
         messages_list = ContactMessage.objects.all().order_by('-id')
 
@@ -263,7 +263,7 @@ def staff_dashboard(request):
     # ============ Адміністратор ============
     elif role == 'receptionist':
         return render(request, 'accounts/dashboard_receptionist.html', {
-            'appointments': Appointment.objects.all().order_by('-date')[:50],
+            'appointments': Appointment.objects.select_related('doctor').all().order_by('-date')[:50],
             'consultations': ConsultationRequest.objects.all().order_by('-id')[:30],
             'messages_list': ContactMessage.objects.all().order_by('-id')[:30],
             'role_name': 'Адміністратор клініки',
@@ -272,7 +272,7 @@ def staff_dashboard(request):
     # ============ ЛІКАР ============
     elif role == 'doctor':
         return render(request, 'accounts/dashboard_doctor.html', {
-            'appointments': Appointment.objects.all().order_by('-date')[:50],
+            'appointments': Appointment.objects.select_related('doctor').all().order_by('-date')[:50],
             'role_name': 'Лікар',
         })
 
