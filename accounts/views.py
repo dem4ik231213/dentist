@@ -222,7 +222,7 @@ def logout_view(request):
 def dashboard(request):
     """Пацієнтський кабінет."""
     from website.models import Appointment
-    my_appointments = Appointment.objects.filter(email=request.user.email).order_by('-date')
+    my_appointments = Appointment.objects.select_related('doctor').filter(email=request.user.email).order_by('-date')
     return render(request, 'accounts/dashboard.html', {
         'appointments': my_appointments,
     })
