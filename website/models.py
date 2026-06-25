@@ -8,14 +8,14 @@ class Doctor(models.Model):
 class Appointment(models.Model):
     name = models.CharField(max_length=100)
     phone = models.CharField(max_length=50)
-    email = models.EmailField()
+    email = models.EmailField(db_index=True)
     address = models.CharField(max_length=200, blank=True)
     schedule = models.CharField(max_length=100)
-    date = models.CharField(max_length=100)
+    date = models.CharField(max_length=100, db_index=True)
     message = models.TextField(blank=True)
 
     doctor = models.ForeignKey(Doctor, on_delete=models.SET_NULL, null=True, blank=True)
-    created = models.DateTimeField(auto_now_add=True)
+    created = models.DateTimeField(auto_now_add=True, db_index=True)
 
     def __str__(self):
         return f"{self.name} — {self.date}"
