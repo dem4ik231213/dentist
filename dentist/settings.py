@@ -12,6 +12,9 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['dentist-production-0f00.up.railway.app', 'demyan1235t.pythonanywhere.com','dentist-jet-nine.vercel.app',]
 
+if os.environ.get('VERCEL_URL'):
+    ALLOWED_HOSTS.append(os.environ['VERCEL_URL'])
+
 # Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',
