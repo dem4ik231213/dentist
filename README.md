@@ -62,11 +62,18 @@ I designed and developed the application, including:
 
 ### Patient Dashboard
 
-![Patient Dashboard](screenshots/patient-dashboard.png)
+![Patient Dashboard](screenshots/doctor-dashboard.png)
+
+### Chief Doctor Dashboard
+![Chief Doctor Dashboard](screenshots/chief-doctor-dashboard.png)
 
 ### Admin Panel
 
-![Admin Panel](screenshots/admin-panel.png)
+![Admin Panel](screenshots/admin-users.png)
+
+###   Telegram Notifications
+![Telegram Notifications](screenshots/telegram-notifications.png)
+
 
 ## Project Status
 
